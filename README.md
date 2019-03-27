@@ -1,7 +1,7 @@
 # Grind Tutor Services
 
 # Pull Requests
-When a feature is finished, make a pull request to this branch
+When a feature is finished, make a pull request to Dev branch
 
 # Team C - Team Members
 
