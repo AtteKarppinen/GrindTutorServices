@@ -1,4 +1,11 @@
-# Server-side code
-Including API
+# Config
+Database connection and possibly other configurations
 
-Probably have to change the name of this folder...
+# Objects
+Student and Tutor classes including properties and CRUD methods
+
+# Student
+Scripts for fetching/manipulating Student table
+
+# Tutor
+Scripts for fetching/manipulating Tutor table
