@@ -16,8 +16,8 @@
     header("Content-Type: application/json; charset=UTF-8");
 
     // Include database and object files
-    include_once '../Config/database.php';
-    include_once '../Objects/tutor.php';
+    include_once "../Config/database.php";
+    include_once "../Objects/tutor.php";
     
     // Instantiate database
     $database = new Database();
@@ -39,7 +39,7 @@
         // Retrieve our table contents
         while ($row = $tutors->fetch(PDO::FETCH_ASSOC)){
             // extract row
-            // this will make $row['Fname'] to
+            // this will make $row["Fname"] to
             // just $Fname only
             extract($row);
     
