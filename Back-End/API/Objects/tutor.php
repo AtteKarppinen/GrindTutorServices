@@ -1,10 +1,10 @@
-<!-- 
+<?php
+/*
     Tutor class. Includes properties and CRUD methods.
     Actual CRUD operations are made in separate scripts
     which initialize an object from this class.
- -->
+*/
 
-<?php
     class Tutor {
     
         // Database connection and table name

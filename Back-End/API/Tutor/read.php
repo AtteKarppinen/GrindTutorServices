@@ -1,4 +1,6 @@
-<!-- 
+<?php
+
+/*
     This script is resbonsible for fetching tutors from 
     database and returning them in json-format.
 
@@ -7,9 +9,8 @@
     like readBySubject().
 
     API call now is made using GET/POST to this script.
- -->
+*/
 
-<?php
     // Required headers
     // First line allows API calls from any address
     header("Access-Control-Allow-Origin: *");

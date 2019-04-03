@@ -1,8 +1,9 @@
-<!-- 
-    Makes and returns connection to database.
- -->
-
 <?php
+
+/*
+    Makes and returns connection to database.
+*/
+
     class Database {
 
         private $servername = "134.209.83.193";
