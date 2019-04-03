@@ -5,10 +5,10 @@
 <?php
     class Database {
 
-        private $servername = '134.209.83.193';
-        private $username = 'user';
-        private $password_db = 'memorophiliaForFallenPineCones';
-        private $dbname = 'grind_tutor_service';
+        private $servername = "134.209.83.193";
+        private $username = "user";
+        private $password_db = "memorophiliaForFallenPineCones";
+        private $dbname = "grind_tutor_service";
         public $conn;
      
         // Get the database connection
@@ -25,7 +25,7 @@
             catch(PDOException $exception) {
                 // TODO: Handle exception better
                 // Let the user know something is wrong
-                echo "<script type='text/javascript'>alert('Connection to database failed');</script>";
+                echo "Connection to database failed";
             }
 
             return $this->conn;
