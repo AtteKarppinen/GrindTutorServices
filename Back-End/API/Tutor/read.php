@@ -67,8 +67,8 @@
     }
     else{
     
-        // Set response code - 204 No Content
-        http_response_code(204);
+        // Set response code - 404 Not Found
+        http_response_code(404);
     
         // Tell the user no tutors found
         echo json_encode(
