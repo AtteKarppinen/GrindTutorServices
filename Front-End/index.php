@@ -1,6 +1,6 @@
 <?php
 	session_start();
-	include('navigationbar.php');
+	include("navigationbar.php");
 ?>
 
 	<body>
@@ -9,7 +9,7 @@
 				<br><br><br>Here at Find a Grind we help you find the tutor best suited to you that will provide you with one on one help to get you the results you deserve.
 			</div>
 			<div class="item2">
-				<img src="images/students.jpg" alt="Students">
+				<img src="Images/students.jpg" alt="Students">
 			</div>
 			
 			<div class="item3">
@@ -18,7 +18,7 @@
 			
 			<div class="item4">
 			<br>
-				<form action="/action_page.php">
+				<form action="/actionPage.php">
 					<select>
 						<option value="default">Choose a Cycle</option>
 						<option value="junior">Junior Cycle</option>
@@ -87,7 +87,7 @@
 			<div class="item6">
 				<h2>John, 25</h2>
 				<br>
-				<img id="roundedImage"src="images/john.jpg" alt="Male Tutor">
+				<img id="roundedImage"src="Images/john.jpg" alt="Male Tutor">
 				<br>
 				<p>
 					Leaving Cert Biology & Chemistry <br>Dublin 2
@@ -97,7 +97,7 @@
 			<div class="item7">
 				<h2>Julie, 27</h2>
 				<br>
-				<img id="roundedImage"src="images/julie.jpg" alt="Female Tutor">
+				<img id="roundedImage"src="Images/julie.jpg" alt="Female Tutor">
 				<br>
 				<p>
 					Junior & Leaving Cert Geography & French Oral <br>Dublin 5

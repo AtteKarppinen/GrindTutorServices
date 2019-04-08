@@ -1,6 +1,6 @@
 <?php
 	session_start();
-	include('navigationbar.php');
+	include("navigationbar.php");
 ?>
 
 	<body>
@@ -10,7 +10,7 @@
 					<h2 id="login">Tutor Log In</h2>
 				</div>
 				
-				<form class="content" action="/action_page.php">
+				<form class="content" action="/actionPage.php">
 					<label for="username"><b>Username</b></label>
 					<input type="text" placeholder="Enter Username" name="username" required>
 
@@ -36,7 +36,7 @@
 					<h2 id="login">Student Log In</h2>
 				</div>
 				
-				<form class="content" action="/action_page.php">
+				<form class="content" action="/actionPage.php">
 					<label for="username"><b>Username</b></label>
 					<input type="text" placeholder="Enter Username" name="username" required>
 
