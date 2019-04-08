@@ -9,7 +9,7 @@
     
         // Database connection and table name
         private $conn;
-        private $table_name = "Tutor_table";
+        private $tableName = "Tutor_table";
     
         // Tutor properties
         public $t_num;
@@ -17,8 +17,9 @@
         public $t_lname;
         public $t_bdate;
         public $t_sex;
+        public $t_email;
+        public $t_password;     // TODO: Remove. Only for developing purposes
         public $t_address;
-        public $t_password;     // TODO: Remove, only for developing purposes
         public $t_fee;          // How much tutor wants for an hour
         public $t_subject_num;  // Subject tutor teaches
         // public $Location;
@@ -32,7 +33,7 @@
         function fetchAll() {
         
             // Select all 
-            $query = "SELECT * FROM ".$this->table_name;
+            $query = "SELECT * FROM ".$this->tableName;
         
             // Prepare query statement
             $tutors = $this->conn->prepare($query);

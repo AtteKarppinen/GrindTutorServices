@@ -8,13 +8,14 @@
     more functions in objects/tutor.php for different purposes
     like readBySubject().
 
-    API call now is made using GET/POST to this script.
+    API call now is made using GET to this script.
 */
 
     // Required headers
     // First line allows API calls from any address
     header("Access-Control-Allow-Origin: *");
     header("Content-Type: application/json; charset=UTF-8");
+    header("Access-Control-Allow-Methods: GET");
 
     // Include database and object files
     include_once "../Config/database.php";
@@ -35,7 +36,7 @@
     if ($num > 0) {
     
         // Tutors array
-        $tutors_arr["Tutors"] = array();
+        $tutorsArray["Tutors"] = array();
     
         // Retrieve our table contents
         while ($row = $tutors->fetch(PDO::FETCH_ASSOC)) {
@@ -44,28 +45,29 @@
             // Just $Fname only
             extract($row);
     
-            // "Description for data" => Tutor property (found in tutor.php)
-            $tutor_item=array(
+            // "Description for data" => Tutor property (fields from db)
+            $tutorItem=array(
                 "Tutor Number" => $t_num,
                 "First Name" => $t_fname,
                 "Last Name" => $t_lname,
                 "Birthday" => $t_bdate,
                 "Sex" => $t_sex,
-                "Address" => $t_address,
+                "Email" => $t_email,
                 "Password" => $t_password,  // TODO: Remove, only for developing purposes
+                "Address" => $t_address,
                 "Fee" => $t_fee,
                 "Subject Number" => $t_subject_num
                 // Location is in unrecognised format, breaking this call
                 // "Location" => $Location
             );
-            array_push($tutors_arr["Tutors"], $tutor_item);
+            array_push($tutorsArray["Tutors"], $tutorItem);
         }
     
         // Set response code - 200 OK
         http_response_code(200);
     
         // Show tutors data in json format
-        echo json_encode($tutors_arr);
+        echo json_encode($tutorsArray);
     }
     else {
     
