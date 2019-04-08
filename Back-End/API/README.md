@@ -1,4 +1,11 @@
-# Server-side code
-Including API
+# Config
+Database connection and possibly other configurations
 
-Test change 1
+# Objects
+Student and Tutor classes including properties and CRUD methods
+
+# Student
+Scripts for fetching/manipulating Student table
+
+# Tutor
+Scripts for fetching/manipulating Tutor table
