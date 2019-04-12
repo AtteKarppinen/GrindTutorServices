@@ -1,7 +1,7 @@
 <?php
 
 /*
-    Register (insert) student. Send token with success message.
+    Register (insert) student. 
 
     API call is made using POST to this script.
 */
@@ -49,15 +49,10 @@
         // Succesfull creation returns true
         if ($student->register()) {
 
-            // Create success array
-            $successArray["Success"] = array();
-            // Fetch newly created user's id and send created token as well (replace TBAs)
-            array_push($successArray["Success"], array("User ID" => "TBA", "Token" => "TBA"));
-
             // HTTP status code - 201 Created
             http_response_code(201);
 
-            echo json_encode($successArray);
+            echo json_encode(array("Success" => "User Created"));
         }
         // Request failed
         else {
