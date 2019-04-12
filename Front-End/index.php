@@ -2,7 +2,7 @@
 	session_start();
 	include("navigationbar.php");
 ?>
-
+<html>
 	<body>
 		<div class="grid-container">
 			<div class="item1">

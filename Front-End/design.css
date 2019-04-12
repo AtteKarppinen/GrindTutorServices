@@ -39,7 +39,7 @@ li a:hover {
 	padding-left: 50px;
 }
 
-/* Home Page */
+/* ---------Home Page---------- */
 
 .item1 { 
 	grid-area: description;
@@ -59,7 +59,6 @@ li a:hover {
 	background-color: #bcf5bc;
 	padding: 20px;
 }
-
 .item5 { 
 	grid-area: heading; 
 	font-family: "Lucida Grande", sans-serif;
@@ -74,7 +73,6 @@ li a:hover {
 	background-color: #d3f8d3;
 	border-radius: 5px;
 }
-
 .grid-container {
 	display: grid;
 	grid-template-areas:
@@ -97,6 +95,54 @@ li a:hover {
 #roundedImage {
   border-radius: 50%;
 }
+
+--------About--------
+
+.about-container{
+	display: grid;
+	grid-template-areas:
+	'description description image image image image'
+	'title title search search search search'
+	'heading heading heading heading heading heading'
+	'tutor1 tutor1 tutor1 tutor2 tutor2 tutor2';
+	grid-gap: 1px;
+	background-color: lightgreen;
+	padding: 10px;
+}
+
+.about-container > div {
+	text-align: center;
+	padding: 10px;
+	font-size: 25px;
+	font-family: "Lucida Grande", sans-serif;
+}
+
+.about_text{
+	grid-area: description; 
+	text-align: center;
+}
+
+.desc_img { 
+	grid-area: image;
+	float: center;
+}
+
+.about_header{
+	text-align: center;
+	padding: 10px ;
+	font-size: 30px;
+	font-family: "Lucida Grande", sans-serif;
+}
+
+#roundedImage2{
+	border-radius: 10%;
+}
+
+.about_body{
+	
+}
+
+
 
 /*-----------------Search Form on Home Page-----------------*/
 
@@ -315,3 +361,6 @@ span.reg {
 	color: red;
 	cursor: pointer;
 }
+
+
+
