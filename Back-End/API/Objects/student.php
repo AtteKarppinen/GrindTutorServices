@@ -48,7 +48,7 @@
         // All data is sent in request's body, no need for parameters
         function register() {
 
-            // Validate data
+            // Validate user input
             $this->s_fname      = testInput($this->s_fname);
             $this->s_lname      = testInput($this->s_lname);
             $this->s_bdate      = testInput($this->s_bdate);
@@ -57,9 +57,9 @@
             $this->s_password   = testInput($this->s_password);
 
             // Check that student is not registered already
-            $user_exists = $this->conn->query("SELECT * FROM $this->tableName WHERE s_email LIKE '$this->s_email'");
+            $result = $this->conn->query("SELECT * FROM $this->tableName WHERE s_email LIKE '$this->s_email'");
             
-            if ($user_exists->rowCount() === 0) {
+            if ($result->rowCount() === 0) {
 
                 // Insert query 
                 $query = "INSERT INTO Student_table (s_fname, s_lname, s_bdate, s_sex, s_email, s_password)
@@ -94,15 +94,32 @@
         // Same like in registration, expect data in body
         function login() {
 
-            // Validate data
+            // Validate user input
+            $this->s_email      = testInput($this->s_email);
+            $this->s_password   = testInput($this->s_password);
 
             // Fetch data from db with given email
+            $result = $this->conn->query("SELECT * FROM $this->tableName WHERE s_email LIKE '$this->s_email'");
 
-            // Check that row count is greater than 0
+            // Check that user found in database
+            if ($result->rowCount() === 1) {
 
-            // Check password match
+                // Fetch user record from result
+                $user = $result->fetch();
 
-            // Return true/false
+                // Check password match
+                if (password_verify($this->s_password, $user["s_password"])) {
+                    return true;
+                }
+                // Passwords do not match
+                else {
+                    return false;
+                }
+            }
+            // User with given email not in database
+            else {
+                return false;
+            }
         }
     }
 ?>
