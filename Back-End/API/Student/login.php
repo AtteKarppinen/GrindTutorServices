@@ -1,7 +1,7 @@
 <?php
 
 /*
-    Register (insert) student. 
+    Student log in. Send token with success message.
 
     API call is made using POST to this script.
 */
@@ -30,37 +30,34 @@
     $data = json_decode(file_get_contents("php://input"));
 
     // Check that data is not missing any info
-    if (!empty($data->firstName) &&
-        !empty($data->lastName) &&
-        !empty($data->birthday) &&
-        !empty($data->sex) &&
-        !empty($data->email) &&
+    if (!empty($data->email) &&
         !empty($data->password)) {
 
         // Set values in student.php
-        $student->s_fname       = $data->firstName;
-        $student->s_lname       = $data->lastName;
-        $student->s_bdate       = $data->birthday;
-        $student->s_sex         = $data->sex;
         $student->s_email       = $data->email;
         $student->s_password    = $data->password;
 
-        // Create student record
+        // Log in
         // Succesfull creation returns true
-        if ($student->register()) {
+        if ($student->login()) {
 
-            // HTTP status code - 201 Created
-            http_response_code(201);
+            // Create success array
+            $successArray["Success"] = array();
+            // Fetch newly created user's id and send created token as well (replace TBAs)
+            array_push($successArray["Success"], array("User ID" => "TBA", "Token" => "TBA"));
 
-            echo json_encode(array("Success" => "User Created"));
+            // HTTP status code - 200 OK
+            http_response_code(200);
+
+            echo json_encode($successArray);
         }
         // Request failed
         else {
 
-            // HTTP status code - 400 Bad Request
-            http_response_code(400);
+            // HTTP status code - 401 Unauthorized
+            http_response_code(401);
 
-            echo json_encode(array("Message" => "User Already Exists"));
+            echo json_encode(array("Message" => "Wrong Email Or Password"));
         }
     }
     // Data missing
@@ -69,6 +66,6 @@
         // HTTP status code - 400 Bad Request
         http_response_code(400);
 
-        echo json_encode(array("Message" => "Bad Request. Incomplete Data."));
+        echo json_encode(array("Message" => "Bad Request. Incomplete Data"));
     }
 ?>
