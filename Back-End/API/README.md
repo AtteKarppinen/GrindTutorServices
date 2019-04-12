@@ -9,3 +9,6 @@ Scripts for fetching/manipulating Student table
 
 # Tutor
 Scripts for fetching/manipulating Tutor table
+
+# Shared
+Assets and scripts used by both tutor and student
