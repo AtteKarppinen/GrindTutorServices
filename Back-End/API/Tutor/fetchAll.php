@@ -76,7 +76,7 @@
     
         // Tell the user no tutors found
         echo json_encode(
-            array("message" => "No tutors found.")
+            array("Message" => "No tutors found.")
         );
     }
 ?>

@@ -74,7 +74,7 @@
     
         // Tell the user no students found
         echo json_encode(
-            array("message" => "No students found.")
+            array("Message" => "No students found.")
         );
     }
 ?>
