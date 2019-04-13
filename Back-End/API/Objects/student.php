@@ -45,6 +45,21 @@
             return $students;
         }
 
+        // Fetch student with ID
+        function fetchWithID() {
+
+            // Select all 
+            $query = "SELECT * FROM $this->tableName WHERE s_num = $this->s_num";
+        
+            // Prepare query statement
+            $student = $this->conn->prepare($query);
+        
+            // Execute query
+            $student->execute();
+        
+            return $student;
+        }
+
         // All data is sent in request's body, no need for parameters
         function register() {
 
