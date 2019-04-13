@@ -68,14 +68,14 @@
                 // Prepare insert statement
                 $insert = $this->conn->prepare($query);
 
-                $insert->bindParam(':firstName', $this->s_fname);
-                $insert->bindParam(':lastName', $this->s_lname);
-                $insert->bindParam(':birthday', $this->s_bdate);
-                $insert->bindParam(':sex', $this->s_sex);
-                $insert->bindParam(':email', $this->s_email);
+                $insert->bindParam(":firstName", $this->s_fname);
+                $insert->bindParam(":lastName", $this->s_lname);
+                $insert->bindParam(":birthday", $this->s_bdate);
+                $insert->bindParam(":sex", $this->s_sex);
+                $insert->bindParam(":email", $this->s_email);
                 // Hash password before storing it
                 $this->s_password = password_hash($this->s_password, PASSWORD_DEFAULT);
-                $insert->bindParam(':hashedPassword', $this->s_password);
+                $insert->bindParam(":hashedPassword", $this->s_password);
 
                 // Send new user to DB
                 try {
@@ -120,6 +120,27 @@
             else {
                 return false;
             }
+        }
+
+        // Fetch user ID
+        function fetchID() {
+
+            // FIXME For some reason s_email = $this->s_email results in SQL error
+            // Using conn->query also makes this vulnerable to SQL injection
+            // But prepare and execute refused to work for me
+            $query = "SELECT s_num FROM $this->tableName WHERE s_email LIKE '$this->s_email'";
+
+            try {
+                $result = $this->conn->query($query);
+            }
+            catch (PDOException $e) {
+                echo $e;
+            }
+
+            // Fetch student ID as integer
+            $studentID = (int)$result->fetchColumn();
+
+            return $studentID;
         }
     }
 ?>

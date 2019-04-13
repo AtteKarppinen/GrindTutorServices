@@ -43,8 +43,11 @@
 
             // Create success array
             $successArray["Success"] = array();
-            // Fetch newly created user's id and send created token as well (replace TBAs)
-            array_push($successArray["Success"], array("User ID" => "TBA", "Token" => "TBA"));
+            
+            // Fetch newly created user's id and send created token as well (replace TBA)
+            $studentID = $student->fetchID();
+
+            array_push($successArray["Success"], array("User ID" => $studentID, "Token" => "TBA"));
 
             // HTTP status code - 200 OK
             http_response_code(200);
