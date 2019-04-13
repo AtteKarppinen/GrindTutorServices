@@ -62,7 +62,7 @@
             if ($result->rowCount() === 0) {
 
                 // Insert query 
-                $query = "INSERT INTO Student_table (s_fname, s_lname, s_bdate, s_sex, s_email, s_password)
+                $query = "INSERT INTO $this->tableName (s_fname, s_lname, s_bdate, s_sex, s_email, s_password)
                           VALUES(:firstName, :lastName, :birthday, :sex, :email, :hashedPassword)";
 
                 // Prepare insert statement
@@ -101,7 +101,7 @@
             // Fetch data from db with given email
             $result = $this->conn->query("SELECT * FROM $this->tableName WHERE s_email LIKE '$this->s_email'");
 
-            // Check that user found in database
+            // Check that student exists in database
             if ($result->rowCount() === 1) {
 
                 // Fetch user record from result
@@ -141,6 +141,87 @@
             $studentID = (int)$result->fetchColumn();
 
             return $studentID;
+        }
+
+        // Update student record
+        function update() {
+
+            // Validate user input
+            $this->s_fname      = testInput($this->s_fname);
+            $this->s_lname      = testInput($this->s_lname);
+            $this->s_bdate      = testInput($this->s_bdate);
+            $this->s_sex        = testInput($this->s_sex);
+            $this->s_email      = testInput($this->s_email);
+            $this->s_password   = testInput($this->s_password);
+
+            // Fetch data from db with given student ID
+            $result = $this->conn->query("SELECT * FROM $this->tableName WHERE s_num = $this->s_num");
+            
+            // Check that student exists in database
+            if ($result->rowCount() === 1) {
+
+                // Update query 
+                $query = "UPDATE $this->tableName 
+                          SET   s_fname = :firstName, s_lname = :lastName, s_bdate = :birthday, 
+                                s_sex = :sex, s_email = :email, s_password = :hashedPassword
+                          WHERE s_num = :studentID;";
+
+                // Prepare update statement
+                $update = $this->conn->prepare($query);
+
+                $update->bindParam(":firstName", $this->s_fname);
+                $update->bindParam(":lastName", $this->s_lname);
+                $update->bindParam(":birthday", $this->s_bdate);
+                $update->bindParam(":sex", $this->s_sex);
+                $update->bindParam(":email", $this->s_email);
+                $update->bindParam(":studentID", $this->s_num);
+                // Hash password before storing it
+                $this->s_password = password_hash($this->s_password, PASSWORD_DEFAULT);
+                $update->bindParam(":hashedPassword", $this->s_password);
+
+                // Update student
+                try {
+                    $update->execute();
+                    return true;
+                }
+                catch(PDOException $e) {
+                    return false;
+                }
+            }
+            else {
+                return false;
+            }
+        }
+
+        // Delete student record
+        function delete() {
+
+            // Fetch data from db with given student ID
+            $result = $this->conn->query("SELECT * FROM $this->tableName WHERE s_num = $this->s_num");
+            
+            // Check that student exists in database
+            if ($result->rowCount() === 1) {
+
+                // Delete query 
+                $query = "DELETE FROM $this->tableName WHERE s_num = :studentID;";
+
+                // Prepare delete statement
+                $delete = $this->conn->prepare($query);
+
+                $delete->bindParam(":studentID", $this->s_num);
+
+                // Delete student
+                try {
+                    $delete->execute();
+                    return true;
+                }
+                catch(PDOException $e) {
+                    return false;
+                }
+            }
+            else {
+                return false;
+            }
         }
     }
 ?>
