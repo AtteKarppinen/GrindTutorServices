@@ -46,7 +46,7 @@
         $student->s_password    = $data->password;
 
         // Create student record
-        // Succesfull creation returns true
+        // Successful creation returns true
         if ($student->register()) {
 
             // HTTP status code - 201 Created

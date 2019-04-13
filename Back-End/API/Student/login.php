@@ -38,7 +38,7 @@
         $student->s_password    = $data->password;
 
         // Log in
-        // Succesfull creation returns true
+        // Successful creation returns true
         if ($student->login()) {
 
             // Create success array
