@@ -66,12 +66,12 @@
             echo json_encode(array("Message" => "Update Failed"));
         }
     }
-    // Record does not exist
+    // Missing Data
     else {
 
         // HTTP status code - 400 Bad Request
         http_response_code(400);
 
-        echo json_encode(array("Message" => "Bad Request. Student With Given ID Does Not Exist"));
+        echo json_encode(array("Message" => "Bad Request. Incomplete Data"));
     }
 ?>

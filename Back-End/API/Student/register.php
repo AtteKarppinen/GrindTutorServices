@@ -69,6 +69,6 @@
         // HTTP status code - 400 Bad Request
         http_response_code(400);
 
-        echo json_encode(array("Message" => "Bad Request. Incomplete Data."));
+        echo json_encode(array("Message" => "Bad Request. Incomplete Data"));
     }
 ?>
