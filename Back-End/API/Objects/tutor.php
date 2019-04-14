@@ -43,5 +43,20 @@
         
             return $tutors;
         }
+        
+        //Select tutors with fee
+        function fetchTutorFee(){
+        
+            // Select all 
+            $query = "SELECT * FROM $this->tableName WHERE t_fee <= $this->t_fee";
+            
+            // Prepare query statement
+            $tutors = $this->conn->prepare($query);
+        
+            // Execute query
+            $tutors->execute();
+            
+            return $tutors;
+        }
     }
 ?>
