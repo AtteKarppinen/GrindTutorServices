@@ -1,2 +1,2 @@
-# Server-side code
-Including API
+# Config
+Database connection and possibly other configurations
