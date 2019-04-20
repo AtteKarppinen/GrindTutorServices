@@ -4,23 +4,23 @@
 <html>
 	<body>
 		
-		<div class= "about_header">
+		<div class= "aboutHeader">
 				<h3> What we do for you here at Find a Grind!!</h3>
 		</div>
-		<div class="about-container">
-			<div class="about_text">
+		<div class="aboutContainer">
+			<div class="aboutText">
 							We know that exam time can be extremely stressfull for students
 							so here at Find a Grind we are bringing some of the best tutors
 							in Dublin to you to make exam time that little bit easier and to help
 							ensure that you get the results that you deserve!
 			</div>
 			
-			 <div class="desc_img">
+			 <div class="descImg">
 				<img id="roundedImage2" src="Images/Graduating1.jpg" alt="Students">
 			</div>
 			
 			
-			<div class="about_body">
+			<div class="aboutBody">
 				<p> All the tutors here on Find a Grind can provide grinds for you in every subject
 					at any level which is examinable at secondary level education.<br> Every tutor is
 					also checked to have been Garda Vetted to ensure your security and safety.
