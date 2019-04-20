@@ -98,7 +98,7 @@ li a:hover {
 
 --------About--------
 
-.about-container{
+.aboutContainer{
 	display: grid;
 	grid-template-areas:
 	'description description image image image image'
@@ -110,24 +110,24 @@ li a:hover {
 	padding: 10px;
 }
 
-.about-container > div {
+.aboutContainer > div {
 	text-align: center;
 	padding: 10px;
 	font-size: 25px;
 	font-family: "Lucida Grande", sans-serif;
 }
 
-.about_text{
+.aboutText{
 	grid-area: description; 
 	text-align: center;
 }
 
-.desc_img { 
+.descImg { 
 	grid-area: image;
 	float: center;
 }
 
-.about_header{
+.aboutHeader{
 	text-align: center;
 	padding: 10px ;
 	font-size: 30px;
@@ -138,7 +138,7 @@ li a:hover {
 	border-radius: 10%;
 }
 
-.about_body{
+.aboutBody{
 	
 }
 
