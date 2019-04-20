@@ -1,42 +1,42 @@
 body {
 	background-color: lightgreen;
+	font-family: "Lucida Grande", sans-serif;
+	color: rgb(16, 80, 128);
 }
 
 /* -----------------Navigation Bar ---------------------*/
 
-ul {
-	list-style-type: none;
-	margin: 0;
-	padding: 0;
+#navbar {
 	overflow: hidden;
 	background-color: rgb(28, 138, 67);
 	position: fixed;
-	top: 0;
+	height: 57px;
 	width: 100%;
-	display:inline-block;
+	top: 0;
 }
 
-li {
-	float: right;
-	font-family: "Lucida Grande", sans-serif;
-}
-
-li a {
-	display: block;
+#navbar a {
+	float: left;
 	color: white;
 	text-align: center;
 	padding: 16px 30px;
 	text-decoration: none;
-}
-
-li a:hover {
-  background-color: lightgreen;
-  color: rgb(15, 77, 131);
+	font-size: 18px;
+	line-height: 25px;
 }
 
 #navbar #logo {
 	height: 60px;
-	padding-left: 50px;
+	padding-left: 30px;
+}
+
+#navbar a:hover {
+  background-color: lightgreen;
+  color: rgb(15, 77, 131);
+}
+
+#navbar-right {
+	float: right;
 }
 
 /* ---------Home Page---------- */
@@ -45,34 +45,50 @@ li a:hover {
 	grid-area: description;
 	font-family: "Lucida Grande", sans-serif;
 }
-.item2 { grid-area: image; }
-.item3 { 
-	grid-area: title; 
-	background-color: #d3f8d3;
-	color: black;
-	border-radius: 5px;
-}
 
-.item4 {
-	grid-area: search;
-	border-radius: 5px;
-	background-color: #bcf5bc;
+.container {
 	padding: 20px;
 }
+
+.row:after {
+	content: "";
+    display: table;
+    clear: both
+}
+
+.leftSideTop {
+	float: left;
+	width: 34%;
+	padding: 20px;
+	text-align: center;
+	font-size: 2vw;
+}
+
 .item5 { 
 	grid-area: heading; 
 	font-family: "Lucida Grande", sans-serif;
 }
-.item6 {
-	grid-area: tutor1;
-	background-color: #d3f8d3;
 
+.rightSideTop {
+	float: left;
+	width: 66%;
+	padding: 20px;
 }
-.item7 {
-	grid-area: tutor2;
+
+.leftSideMiddle {
+	float: left;
+	width: 34%;
+	padding: 20px;
 	background-color: #d3f8d3;
 	border-radius: 5px;
+	padding-bottom: 110px;
+	padding-top: 117px;
+	text-align: center;
+	border-style: solid;
+	border-width: 1px;
+	border-color: lightgreen;
 }
+
 .gridContainer {
 	display: grid;
 	grid-template-areas:
@@ -85,18 +101,48 @@ li a:hover {
 	padding: 10px;
 }
 
-.gridContainer > div {
+/* Are gridContainer and rightSideMiddle the same thing?  */
+.gridContainer > div {}
+
+.rightSideMiddle {
+	float: left;
+	width: 66%;
+	padding: 20px;
+	border-radius: 5px;
+	background-color: #bcf5bc;
+	border-style: solid;
+	border-width: 1px;
+	border-color: lightgreen;
+}
+
+.tutors {
 	text-align: center;
-	padding: 20px ;
-	font-size: 30px;
-	font-family: "Lucida Grande", sans-serif;
+}
+
+.bottom {
+	float: left;
+	width: 50%;
+	padding: 20px;
+	text-align: center;
+	background-color: #d3f8d3;
+	border-radius: 5px;
+	border-style: solid;
+	border-width: 1px;
+	border-color: lightgreen
+}
+	
+#students {
+	display: block;
+	height: auto;
+	max-width: 100%;
+	border-radius: 5px;
 }
 
 #roundedImage {
-  border-radius: 50%;
+	border-radius: 50%;
 }
 
---------About--------
+/* --------About-------- */
 
 .aboutContainer{
 	display: grid;
@@ -138,11 +184,7 @@ li a:hover {
 	border-radius: 10%;
 }
 
-.aboutBody{
-	
-}
-
-
+.aboutBody{}
 
 /*-----------------Search Form on Home Page-----------------*/
 
@@ -173,34 +215,24 @@ input[type=submit]:hover {
 
 /* ----------------Login Page----------------------- */
 
-.tutorlogin { 
-	grid-area: tutor;
+.tutorLogin { 
 	background-color: #bcf5bc;
 	border-radius: 5px;
-	color: rgb(16, 80, 128);
+	float: left;
+	width: 50%;
+	border-style: solid;
+	border-color: lightgreen;
 }
 
-.studentlogin { 
+.studentLogin { 
 	grid-area: student;
 	background-color: #d3f8d3;
 	border-radius: 5px;
 	text-align: left;
-	color: rgb(16, 80, 128);
-}
-
-.loginContainer {
-	display: grid;
-	grid-template-areas: 'tutor tutor tutor student student student'; 
-	grid-gap: 5px;
-	background-color: lightgreen;
-	padding: 10px;
-}
-
-.loginContainer > div {
-	text-align: center;
-	padding: 20px ;
-	font-size: 30px;
-	font-family: "Lucida Grande", sans-serif;
+	float: left;
+	width: 50%;
+	border-style: solid;
+	border-color: lightgreen;
 }
 
 input[type=text], input[type=password], input[type=email] {
@@ -232,6 +264,8 @@ button:hover {
 	background-color: #4CAF50;
 	border-radius: 5px;
 	color: white;
+	padding: 2px;
+	font-size: 2vw;
 }
 
 .bottomcontainer {
@@ -239,14 +273,12 @@ button:hover {
 	background-color:#f1f1f1; 
 	text-align: center;
 	border-radius: 5px;
-	color: rgb(16, 80, 128);
 }
 
 a {
 	text-decoration: none;
 	font-size: 15px;
 	color: blue;
-	
 }
 
 .psw a {
@@ -274,43 +306,23 @@ span.reg {
 
 /*----------------Registration Page---------------------*/
 
-.topreg {
-	grid-area: top;
+.topReg {
 	background-color: rgb(234, 244, 246);
+	text-align: center;
 	border-radius: 5px;
-	color: rgb(16, 80, 128);
+	padding: 20px;
+	font-size: 2vw;
 }
 
-.tutorreg { 
-	grid-area: tutor;
+.register {
+	padding: 20px;
 	background-color: #bcf5bc;
 	border-radius: 5px;
-	color: rgb(16, 80, 128);
-}
-
-.studentreg { 
-	grid-area: student;
-	background-color: #d3f8d3;
-	border-radius: 5px;
-	text-align: left;
-	color: rgb(16, 80, 128);
-}
-
-.regcontent {
-	display: grid;
-	grid-template-areas: 
-	'top top top top top top'
-	'tutor tutor tutor student student student'; 
-	grid-gap: 5px;
-	background-color: lightgreen;
-	padding: 10px;
-}
-
-.regcontent > div {
 	text-align: center;
-	padding: 20px ;
-	font-size: 30px;
-	font-family: "Lucida Grande", sans-serif;
+	width: 50%;
+	float: left;
+	border-style: solid;
+	border-color: lightgreen;
 }
 
 .imgcontainer {
@@ -343,6 +355,7 @@ span.reg {
 	border: 1px solid #888;
 	width: 80%; 
 	text-align: left;
+	padding: 20px;
 }
 
 /* The Close Button (x) */
@@ -363,4 +376,34 @@ span.reg {
 }
 
 
+/*------------Profile Page-----------------*/
+
+.fakeimg {
+	height:200px;
+	background-color: #aaa;
+	width: 100%;
+	padding: 20px;
+}
+
+ *{
+  box-sizing: border-box;
+}
+
+.leftcolumn {
+	float: left;
+	width: 25%;
+}
+
+.rightcolumn {
+	float: left;
+	width: 75%;
+	padding-left: 20px;
+}
+
+.card {
+	background-color: white;
+   padding: 20px;
+   margin-top: 20px;
+   border-radius: 5px;
+}
 
