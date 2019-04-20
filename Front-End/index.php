@@ -4,7 +4,7 @@
 ?>
 <html>
 	<body>
-		<div class="grid-container">
+		<div class="gridContainer">
 			<div class="item1">
 				<br><br><br>Here at Find a Grind we help you find the tutor best suited to you that will provide you with one on one help to get you the results you deserve.
 			</div>
