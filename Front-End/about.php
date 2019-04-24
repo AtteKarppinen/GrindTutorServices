@@ -7,7 +7,7 @@
 		<div class= "aboutHeader">
 				<h3> What we do for you here at Find a Grind!!</h3>
 		</div>
-		<div class="aboutContainer">
+		
 			<div class="aboutText">
 							We know that exam time can be extremely stressfull for students
 							so here at Find a Grind we are bringing some of the best tutors
@@ -15,7 +15,9 @@
 							ensure that you get the results that you deserve!
 			</div>
 			
-			 <div class="descImg">
+			<br>
+
+			<div class="descImg">
 				<img id="roundedImage2" src="Images/Graduating1.jpg" alt="Students">
 			</div>
 			
@@ -34,6 +36,5 @@
 			</div>
 					
 			
-		</div>
 		</body>	
 </html>
