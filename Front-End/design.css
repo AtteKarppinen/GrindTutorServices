@@ -38,12 +38,8 @@ body {
 #navbar-right {
 	float: right;
 }
-/* ---------------------Home Page----------------------- */
 
-.item1 { 
-	grid-area: description;
-	font-family: "Lucida Grande", sans-serif;
-}
+/* ---------------------Home Page----------------------- */
 
 .container {
 	padding: 20px;
@@ -94,12 +90,6 @@ body {
 	border-color: lightgreen;
 }
 
-.rightSideTop {
-	float: left;
-	width: 66%;
-	padding: 20px;
-}
-
 .tutors {
 	text-align: center;
 }
@@ -127,18 +117,6 @@ body {
 	border-radius: 50%;
 }
 
-.gridContainer {
-	display: grid;
-	grid-template-areas:
-	'description description image image image image'
-	'title title search search search search'
-	'heading heading heading heading heading heading'
-	'tutor1 tutor1 tutor1 tutor2 tutor2 tutor2';
-	grid-gap: 1px;
-	background-color: lightgreen;
-	padding: 10px;
-}
- 
 /* --------About-------- */
 
 .aboutText{ 
