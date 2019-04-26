@@ -22,7 +22,7 @@ $database = new Database();
 $db       = $database->getConnection();
 
 // Initialize tutor object
-$tutor = new Tutor($db);
+$tutors = new Tutor($db);
 
 // Get data sent from front-end
 // php://input includes body data sent using POST
@@ -33,7 +33,7 @@ $data = json_decode(file_get_contents("php://input"));
 //Retrieve the data from front-end 
 //Checks if the front-end actually had input
 //tutorFee is variable used for front-end
-if ((!empty($data->tutorLocation) AND !empty($data->subjectLevel)AND !empty($data->subjectName))) {
+if ((!empty($data->tutorLocation) && !empty($data->subjectLevel)&& !empty($data->subjectName))) {
 
     //Sets values from front-end
     $tutor->t_location=$data->tutorLocation;
