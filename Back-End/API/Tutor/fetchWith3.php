@@ -70,8 +70,8 @@ if ((!empty($data->tutorLocation) && !empty($data->subjectLevel)&& !empty($data-
                 "Address" => $t_address,
                 "Location"=> $t_location,
                 "Fee" => $t_fee,
-                "Subject Name"=>$subject_name,
-                "Subject Level"=>$subject_level
+                "Subject Name" => $subject_name,
+                "Subject Level" => $subject_level
                 // Location is in unrecognised format, breaking this call
                 // "Location" => $Location
             );

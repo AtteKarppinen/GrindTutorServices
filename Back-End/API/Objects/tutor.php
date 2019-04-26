@@ -22,8 +22,8 @@
         public $t_address;
         public $t_fee;          // How much tutor wants for an hour
         public $t_subject_num;  // Subject tutor teaches
-        // public $Location;
-        
+        public $t_location;
+       
         //Subject_table items
         public $subject_name;
         public $subject_level;
@@ -74,21 +74,20 @@
             */
 
             //Select the info we need
-            $query = "SELECT t_num,t_fname,t_lname,t_bdate,t_sex,t_email,t_address,t_location,t_fee,subject_name,subject_level FROM 'Tutor_table'
-            INNER JOIN 'Subject_table'
-            ON (t_subject_num=$this->subject_num)
-            AND(t_location='$this->t_location')
-            AND(subject_name='$this->subject_name')
-            AND(subject_level='$this->subject_level')";
+            $query = "SELECT * FROM Tutor_table
+            INNER JOIN Subject_table
+            ON (t_subject_num=subject_num)
+            AND(t_location=$this->t_location)
+            AND(subject_name=$this->subject_name)
+            AND(subject_level=$this->subject_level)";
             
            
-            $tutors = $this->conn->query($query);
 
             // Prepare query statement
-        //    $tutors = $this->conn->prepare($query);
+            $tutors = $this->conn->prepare($query);
         
             // Execute query
-         //   $tutors->execute();
+            $tutors->execute();
             
             return $tutors;
         }
