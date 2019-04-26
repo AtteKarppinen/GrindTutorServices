@@ -76,11 +76,10 @@
             //Select the info we need
             $query = "SELECT * FROM Tutor_table
             INNER JOIN Subject_table
-            ON (t_subject_num=subject_num)
-            AND(t_location=$this->t_location)
-            AND(subject_name=$this->subject_name)
-            AND(subject_level=$this->subject_level)";
-            
+            ON (t_subject_num = subject_num)
+            AND(t_location =   '$this->t_location')
+            AND(subject_name =  '$this->subject_name')
+            AND(subject_level = '$this->subject_level')";
            
 
             // Prepare query statement

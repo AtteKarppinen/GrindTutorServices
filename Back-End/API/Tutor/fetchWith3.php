@@ -36,9 +36,9 @@ $data = json_decode(file_get_contents("php://input"));
 if ((!empty($data->tutorLocation) && !empty($data->subjectLevel)&& !empty($data->subjectName))) {
 
     //Sets values from front-end
-    $tutor->t_location=$data->tutorLocation;
-    $tutor->subject_name=$data->subjectName;
-    $tutor->subject_level=$data->subjectLevel;
+    $tutors->t_location=$data->tutorLocation;
+    $tutors->subject_name=$data->subjectName;
+    $tutors->subject_level=$data->subjectLevel;
     
     
     //Query tutor with fee
