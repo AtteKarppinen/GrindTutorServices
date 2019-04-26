@@ -33,20 +33,22 @@ $data = json_decode(file_get_contents("php://input"));
 //Retrieve the data from front-end 
 //Checks if the front-end actually had input
 //tutorFee is variable used for front-end
-if (!empty($data->tutorFee)) {
+if ((!empty($data->tutorLocation) AND !empty($data->subjectLevel)AND !empty($data->subjectName))) {
+
+    //Sets values from front-end
+    $tutor->t_location=$data->tutorLocation;
+    $tutor->subject_name=$data->subjectName;
+    $tutor->subject_level=$data->subjectLevel;
     
-    //Set values in tutor.php
-    //Sets value from front-end
-    //Set t_fee as this value
-    $tutor->t_fee = $data->tutorFee;
     
     //Query tutor with fee
     //Call the method from the other file
-    $foundTutors = $tutor->fetchTutorFee();
+    //The other file returns Tutors and we set it here
+    $foundTutors = $tutors->fetchTutorThree();
     $num         = $foundTutors->rowCount();
     
     //Check if any tutors found
-    if ($num > 0) {
+    if ($num > 0){
         
         $tutorsArray["Tutors"] = array();
         
@@ -66,9 +68,10 @@ if (!empty($data->tutorFee)) {
                 "Sex" => $t_sex,
                 "Email" => $t_email,
                 "Address" => $t_address,
-                "Location"=> $t_location
+                "Location"=> $t_location,
                 "Fee" => $t_fee,
-                "Subject Number" => $t_subject_num
+                "Subject Name"=>$subject_name,
+                "Subject Level"=>$subject_level
                 // Location is in unrecognised format, breaking this call
                 // "Location" => $Location
             );

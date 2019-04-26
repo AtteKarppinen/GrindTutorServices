@@ -10,7 +10,7 @@
         // Database connection and table name
         private $conn;
         private $tableName = "Tutor_table";
-    
+        private $subjectTable='Subject_table';
         // Tutor properties
         public $t_num;
         public $t_fname;
@@ -23,6 +23,10 @@
         public $t_fee;          // How much tutor wants for an hour
         public $t_subject_num;  // Subject tutor teaches
         // public $Location;
+        
+        //Subject_table items
+        public $subject_name;
+        public $subject_level;
     
         // Constructor with $db as database connection
         public function __construct($db) {
@@ -50,6 +54,34 @@
             // Select all 
             $query = "SELECT * FROM $this->tableName WHERE t_fee <= $this->t_fee";
             
+            // Prepare query statement
+            $tutors = $this->conn->prepare($query);
+        
+            // Execute query
+            $tutors->execute();
+            
+            return $tutors;
+        }
+        
+        function fetchTutorThree(){
+            
+            /*            
+            select t_fname,t_lname,t_sex,t_bdate,t_location,subject_name,subject_level,t_fee,t_email
+            from Subject_table
+            inner join Tutor_table 
+            on (t_subject_num=subject_num)
+            and (subject_level="Senior Cycle");
+            */
+
+            //Select the info we need
+            $query = "SELECT * FROM $this->tableName
+            INNER JOIN $this->subjectTable
+            ON (t_subject_num=subject_num)
+            AND(t_location=$this->t_location)
+            AND(subject_name=$this->subject_name)
+            AND(subject_level=$this->subject_level)";
+                
+                
             // Prepare query statement
             $tutors = $this->conn->prepare($query);
         
