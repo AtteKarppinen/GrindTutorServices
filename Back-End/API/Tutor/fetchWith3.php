@@ -60,6 +60,7 @@ if ((!empty($data->tutorLocation) && !empty($data->subjectLevel)&& !empty($data-
             extract($row);
             
             // "Description for data" => Tutor property (fields from db)
+            //Fetches 2 tables from the subject table ike name and level for user to see
             $tutorItem = array(
                 "Tutor Number" => $t_num,
                 "First Name" => $t_fname,

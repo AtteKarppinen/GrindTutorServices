@@ -77,14 +77,22 @@
             $query = "SELECT * FROM Tutor_table
             INNER JOIN Subject_table
             ON (t_subject_num = subject_num)
-            AND(t_location =   '$this->t_location')
-            AND(subject_name =  '$this->subject_name')
-            AND(subject_level = '$this->subject_level')";
+            AND(t_location =   :location)
+            AND(subject_name =  :subject)
+            AND(subject_level = :subjectLevel)";
            
 
+
+
             // Prepare query statement
+            //Done this way to prevent SQL Injections
             $tutors = $this->conn->prepare($query);
-        
+            
+            $tutors->bindParam(':location',$this->t_location);
+            $tutors->bindParam(':subject',$this->subject_name);
+            $tutors->bindParam(':subjectLevel',$this->subject_level);
+
+
             // Execute query
             $tutors->execute();
             
