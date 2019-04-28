@@ -3,8 +3,8 @@
 
 	<head>
 		<title>Find a Grind</title>
-		<link rel="stylesheet" type="text/css" href="design.css">
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="design.css"> 
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<script type="text/javascript" src="register.js"></script>
 		<script type="text/javascript" src="login.js"></script>
 		
