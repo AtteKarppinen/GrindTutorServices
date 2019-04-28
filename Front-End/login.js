@@ -1,20 +1,23 @@
 $(function() {
-	$('#tutorLog').submit(function(button) {
+	$("#tutorLog").submit(function(button) {
 		button.preventDefault();
 		
-		const email = $('#t_email').val();
-		const pword = $('#t_password').val(); 
+		const email = $("#email").val();
+		const pword = $("#password").val(); 
 		
-		const obj = { t_email: email, t_password: pword };
+		const obj = { email: email, password: pword };
 		const data = JSON.stringify(obj); 
 		
 		$.ajax({
-			url: 'http://134.209.83.193/GrindTutorServices/Back-End/API/Student/login.php',
-			type: 'POST',
+			url: "http://134.209.83.193/GrindTutorServices/Back-End/API/Tutor/login.php",
+			type: "POST",
 			data: data
 		})
 		.done(function(result) {
 			console.log(result.Success[0].Token);
+			if(result.Success){
+				window.location = "/Front-End/index.php";
+			}
 		})
 		.fail(function(error) {	
 			console.log(error.responseJSON, error.status);
@@ -23,25 +26,31 @@ $(function() {
 });
 
 $(function() {
-	$('#studentLog').submit(function(button) {
+	$("#studentLog").submit(function(button) {
 		button.preventDefault();
 		
-		const email = $('#s_email').val();
-		const psw = $('#s_password').val(); 
+		const email = $("#email").val();
+		const psw = $("#password").val(); 
 		
-		const obj = { s_email: email, s_password: psw };
+		const obj = { email: email, password: psw };
 		const data = JSON.stringify(obj);
 		
 		$.ajax({
-			url: 'http://134.209.83.193/GrindTutorServices/Back-End/API/Student/login.php',
-			type: 'POST',
+			url: "http://134.209.83.193/GrindTutorServices/Back-End/API/Student/login.php",
+			type: "POST",
 			data: data
 		})
 		.done(function(result) {
 			console.log(result.Success[0].Token);
+			if(result.Success){
+				window.location = "/Front-End/index.php";
+			}
 		})
 		.fail(function(error) {	
 			console.log(error.responseJSON, error.status);
+			if(error.responseJSON) {
+				alert("invalid password");
+			}
 		})
 	});
 });

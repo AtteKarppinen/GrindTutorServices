@@ -12,11 +12,11 @@
 					</div>
 					
 					<form id="tutorLog" class="content" action="" method="POST">
-						<label for="t_email">Email</label>
-						<input type="email" placeholder="Enter your Email" name="t_email" required>
+						<label for="email">Email</label>
+						<input type="email" placeholder="Enter your Email" name="email" required>
 
-						<label for="t_password"><b>Password</b></label>
-						<input type="password" placeholder="Enter Password" name="t_password" required>
+						<label for="password"><b>Password</b></label>
+						<input type="password" placeholder="Enter Password" name="password" required>
 						<label id="remember">
 							<input type="checkbox" name="remember"> Remember me
 						</label>
@@ -38,11 +38,11 @@
 					</div>
 					
 					<form id="studentLog" class="content" action="" method="POST">
-						<label for="s_email">Email</label>
-						<input type="email" placeholder="Enter your Email" id="s_email" required>
+						<label for="email">Email</label>
+						<input type="email" placeholder="Enter your Email" id="email" required>
 
-						<label for="s_password"><b>Password</b></label>
-						<input type="password" placeholder="Enter Password" id="s_password" required>
+						<label for="password"><b>Password</b></label>
+						<input type="password" placeholder="Enter Password" id="password" required>
 
 						<label id="remember">
 							<input type="checkbox" name="remember"> Remember me
