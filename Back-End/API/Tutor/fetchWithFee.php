@@ -66,7 +66,7 @@ if (!empty($data->tutorFee)) {
                 "Sex" => $t_sex,
                 "Email" => $t_email,
                 "Address" => $t_address,
-                "Location"=> $t_location
+                "Location"=> $t_location,
                 "Fee" => $t_fee,
                 "Subject Number" => $t_subject_num
                 // Location is in unrecognised format, breaking this call

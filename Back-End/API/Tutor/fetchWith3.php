@@ -75,6 +75,7 @@ if ((!empty($data->tutorLocation) && !empty($data->subjectLevel)&& !empty($data-
                 "Subject Level" => $subject_level
                 // Location is in unrecognised format, breaking this call
                 // "Location" => $Location
+                //I added subject name and level from the subject table to the array
             );
             array_push($tutorsArray["Tutors"], $tutorItem);
         } //End while    
