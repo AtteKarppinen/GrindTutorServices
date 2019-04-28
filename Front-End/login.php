@@ -11,7 +11,7 @@
 						<h2 id="login">Tutor Log In</h2>
 					</div>
 					
-					<form class="content" action="/actionPage.php">
+					<form class="content" action="" method="POST">
 						<label for="username"><b>Username</b></label>
 						<input type="text" placeholder="Enter Username" name="username" required>
 
@@ -37,7 +37,7 @@
 						<h2 id="login">Student Log In</h2>
 					</div>
 					
-					<form class="content" action="/actionPage.php">
+					<form class="content" action="" method="POST">
 						<label for="username"><b>Username</b></label>
 						<input type="text" placeholder="Enter Username" name="username" required>
 
