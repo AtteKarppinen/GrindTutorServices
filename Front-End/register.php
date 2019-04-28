@@ -96,9 +96,37 @@
 								<input type="checkbox" name="sub19" value="Science">Science
 								<input type="checkbox" name="sub20" value="Spanish">Spanish
 								
-								<button type="submit">Register</button>
-							</div>
+								<button type="submit" id="tutorSubmit">Register</button>
+								
+								<?php	
+									if(isset($_POST['firstname'])){
+										$firstName = stripslashes($_POST['firstName']);
+										$lastName = stripslashes($_POST['lastName']);
+										$email = stripslashes($_POST['email']);
+										$password = stripslashes($_POST['password']);
+										$confirmPassword = stripslashes($_POST['confirmPassword']);
+										$location = stripslashes($_POST['location']);
+										$vetting = stripslashes($_POST['vetting']);
+										$subjects = stripslashes($_POST['subjects']);
+										
+										$query = "INSERT into 'tutor' (firstName, lastName, email, password, confirmPassword, location, vetting, subjects)
+										VALUES('$firstName', '$lastName', '$email', '$password', '$confirmPassword '$location', '$vetting', '$subjects')";
+
+										$result = mysqli_query($query);
+										
+										if($result){
+											http_response_code(201);
+											
+										}
+										else
+										{
+											http_response_code(400);
+										}
+									}
+											
+								?>
 							
+							</div>
 						</form>
 					</div>	
 				</div>
@@ -130,7 +158,31 @@
 								<label for="confirmpassword">Confirm Password</label>
 								<input type="password" placeholder="Re-Enter Password" name="confirmpassword" required>
 								
-								<button type="submit">Register</button>
+								<button type="submit" id="studentSubmit">Register</button>
+								
+								<?php
+								
+									if(isset($_POST['firstName'])){	
+									
+										$firstName = stripslashes($_POST['firstName']);
+										$lastName = stripslashes($_POST['lastName']);
+										$email = stripslashes($_POST['email']);
+										$password = stripslashes($_POST['password']);
+										$confirmPassword = stripslashes($_POST['confirmPassword']);
+										
+										$query = "INSERT into 'student' (firstName, lastName, email, password, confirmPassword)
+										VALUES('$firstName', '$lastName', '$email', '$password', '$confirmPassword')";
+								
+										if($result){
+											http_response_code(201);
+											
+										}
+										else
+										{
+											http_response_code(400);
+										}
+									}
+								?>
 							</div>
 							
 						</form>
