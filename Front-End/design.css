@@ -105,13 +105,6 @@ body {
 	border-width: 1px;
 	border-color: lightgreen
 }
-	
-/*#students {
-	display: block;
-	height: auto;
-	max-width: 100%;
-	border-radius: 5px;
-}*/
 
 #roundedImage {
 	border-radius: 50%;
