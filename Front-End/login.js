@@ -1,11 +1,16 @@
 $(function() {
+	
+	// TUTOR
 	$("#tutorLog").submit(function(button) {
 		button.preventDefault();
 		
 		const email = $("#email").val();
 		const pword = $("#password").val(); 
 		
-		const obj = { email: email, password: pword };
+		const obj = { 
+			email: email, 
+			password: pword 
+		};
 		const data = JSON.stringify(obj); 
 		
 		$.ajax({
@@ -14,7 +19,7 @@ $(function() {
 			data: data
 		})
 		.done(function(result) {
-			console.log(result.Success[0].Token);
+			console.log(result);
 			if(result.Success){
 				window.location = "/Front-End/index.php";
 			}
@@ -23,16 +28,18 @@ $(function() {
 			console.log(error.responseJSON, error.status);
 		})
 	});
-});
 
-$(function() {
+	// STUDENT
 	$("#studentLog").submit(function(button) {
 		button.preventDefault();
 		
 		const email = $("#email").val();
 		const psw = $("#password").val(); 
 		
-		const obj = { email: email, password: psw };
+		const obj = { 
+			email: email, 
+			password: psw 
+		};
 		const data = JSON.stringify(obj);
 		
 		$.ajax({
@@ -41,7 +48,7 @@ $(function() {
 			data: data
 		})
 		.done(function(result) {
-			console.log(result.Success[0].Token);
+			console.log(result);
 			if(result.Success){
 				window.location = "/Front-End/index.php";
 			}
