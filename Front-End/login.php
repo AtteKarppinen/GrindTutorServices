@@ -11,7 +11,7 @@
 						<h2 id="login">Tutor Log In</h2>
 					</div>
 					
-					<form id="tutorLog" class="content">
+					<form id="tutorLog" class="content" action="" method="POST">
 						<label for="email">Email</label>
 						<input type="email" placeholder="Enter your Email" name="email" required>
 
@@ -37,7 +37,7 @@
 						<h2 id="login">Student Log In</h2>
 					</div>
 					
-					<form id="studentLog" class="content">
+					<form id="studentLog" class="content" action="" method="POST">
 						<label for="email">Email</label>
 						<input type="email" placeholder="Enter your Email" id="email" required>
 
