@@ -105,16 +105,65 @@ body {
 	border-width: 1px;
 	border-color: lightgreen
 }
-	
+
+#roundedImage {
+	border-radius: 50%;
+}
+
+/*----------------------Slideshow------------*/
+
+.mySlides {
+	display: none;
+}
+
 #students {
+	vertical-align: middle;
 	display: block;
 	height: auto;
 	max-width: 100%;
 	border-radius: 5px;
 }
 
-#roundedImage {
-	border-radius: 50%;
+.slideshow_container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+.dot {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active {
+  background-color: #717171;
+}
+
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .text {font-size: 11px}
 }
 
 /* --------About-------- */
@@ -364,3 +413,17 @@ span.reg {
    border-radius: 5px;
 }
 
+/*-----------------Animation----------------*/
+#animate_background {
+	background-color: rgb(28, 138, 67);
+}
+
+#logo_animation {
+	width: 60%;
+	height: 40%;
+}
+
+#responsive_logo {
+	width: 100%;
+	height: auto;
+}
