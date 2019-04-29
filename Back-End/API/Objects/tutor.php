@@ -12,7 +12,7 @@
         // Database connection and table name
         private $conn;
         private $tableName = "Tutor_table";
-    
+        private $subjectTable='Subject_table';
         // Tutor properties
         public $t_num;
         public $t_fname;
@@ -24,7 +24,11 @@
         public $t_address;
         public $t_fee;          // How much tutor wants for an hour
         public $t_subject_num;  // Subject tutor teaches
-        // public $Location;
+        public $t_location;
+       
+        //Subject_table items
+        public $subject_name;
+        public $subject_level;
     
         // Constructor with $db as database connection
         public function __construct($db) {
@@ -43,6 +47,44 @@
             // Execute query
             $tutors->execute();
         
+            return $tutors;
+        }
+        
+        //Select tutors with fee
+        function fetchTutorFee(){
+        
+            // Select all 
+            $query = "SELECT * FROM $this->tableName WHERE t_fee <= $this->t_fee";
+            
+            // Prepare query statement
+            $tutors = $this->conn->prepare($query);
+        
+            // Execute query
+            $tutors->execute();
+            
+            return $tutors;
+        }
+        
+        function fetchTutorThree(){
+            
+            //Select the info we need
+            $query = "SELECT * FROM Tutor_table
+            INNER JOIN Subject_table
+            ON (t_subject_num = subject_num)
+            AND(t_location =   :location)
+            AND(subject_name =  :subject)
+            AND(subject_level = :subjectLevel)";
+           
+            //Prepare query statement
+            //Done this way to prevent SQL Injections
+            $tutors = $this->conn->prepare($query);
+            
+            $tutors->bindParam(":location",$this->t_location);
+            $tutors->bindParam(":subject",$this->subject_name);
+            $tutors->bindParam(":subjectLevel",$this->subject_level);
+            
+            // Execute query
+            $tutors->execute();
             return $tutors;
         }
 
@@ -84,9 +126,6 @@
                 $update->bindParam(":fee",       $this->t_fee);
                 $update->bindParam(":subNumber", $this->t_subject_num);
                 $update->bindParam(":tutorID",   $this->t_num);
-
-
-
 
                 // Hash password before storing it
                 $this->t_password = password_hash($this->t_password, PASSWORD_DEFAULT);
