@@ -65,14 +65,6 @@
         
         function fetchTutorThree(){
             
-            /*            
-            select t_fname,t_lname,t_sex,t_bdate,t_location,subject_name,subject_level,t_fee,t_email
-            from Subject_table
-            inner join Tutor_table 
-            on (t_subject_num=subject_num)
-            and (subject_level="Senior Cycle");
-            */
-
             //Select the info we need
             $query = "SELECT * FROM Tutor_table
             INNER JOIN Subject_table
@@ -81,21 +73,16 @@
             AND(subject_name =  :subject)
             AND(subject_level = :subjectLevel)";
            
-
-
-
-            // Prepare query statement
+            //Prepare query statement
             //Done this way to prevent SQL Injections
             $tutors = $this->conn->prepare($query);
             
-            $tutors->bindParam(':location',$this->t_location);
-            $tutors->bindParam(':subject',$this->subject_name);
-            $tutors->bindParam(':subjectLevel',$this->subject_level);
-
-
+            $tutors->bindParam(":location",$this->t_location);
+            $tutors->bindParam(":subject",$this->subject_name);
+            $tutors->bindParam(":subjectLevel",$this->subject_level);
+            
             // Execute query
             $tutors->execute();
-            
             return $tutors;
         }
     }

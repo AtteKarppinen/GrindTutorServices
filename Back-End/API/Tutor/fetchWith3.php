@@ -1,12 +1,5 @@
 <?php
-
-/*
-This script is resbonsible for fetching tutors from database
-based on the fee given.
-
-API call now is made using GET to this script.
-*/
-
+//Responsible for 3 variable search on our API from the front-page
 // Required headers
 // First line allows API calls from any address
 header("Access-Control-Allow-Origin: *");
@@ -33,13 +26,12 @@ $data = json_decode(file_get_contents("php://input"));
 //Retrieve the data from front-end 
 //Checks if the front-end actually had input
 //tutorFee is variable used for front-end
-if ((!empty($data->tutorLocation) && !empty($data->subjectLevel)&& !empty($data->subjectName))) {
-
-    //Sets values from front-end
-    $tutors->t_location=$data->tutorLocation;
-    $tutors->subject_name=$data->subjectName;
-    $tutors->subject_level=$data->subjectLevel;
+if ((!empty($data->tutorLocation) && !empty($data->subjectLevel) && !empty($data->subjectName))) {
     
+    //Sets values from front-end
+    $tutors->t_location    = $data->tutorLocation;
+    $tutors->subject_name  = $data->subjectName;
+    $tutors->subject_level = $data->subjectLevel;
     
     //Query tutor with fee
     //Call the method from the other file
@@ -48,7 +40,7 @@ if ((!empty($data->tutorLocation) && !empty($data->subjectLevel)&& !empty($data-
     $num         = $foundTutors->rowCount();
     
     //Check if any tutors found
-    if ($num > 0){
+    if ($num > 0) {
         
         $tutorsArray["Tutors"] = array();
         
@@ -69,7 +61,7 @@ if ((!empty($data->tutorLocation) && !empty($data->subjectLevel)&& !empty($data-
                 "Sex" => $t_sex,
                 "Email" => $t_email,
                 "Address" => $t_address,
-                "Location"=> $t_location,
+                "Location" => $t_location,
                 "Fee" => $t_fee,
                 "Subject Name" => $subject_name,
                 "Subject Level" => $subject_level
@@ -79,15 +71,11 @@ if ((!empty($data->tutorLocation) && !empty($data->subjectLevel)&& !empty($data-
             );
             array_push($tutorsArray["Tutors"], $tutorItem);
         } //End while    
-        
         //Set response code 200 okay
-        http_response_code(200);
-        
+        http_response_code(200);      
         //Sow students in json format
         echo json_encode($tutorsArray);
-        
-    } else {
-        
+    } else {   
         // Set response code - 404 Not Found
         http_response_code(404);
         
@@ -97,7 +85,6 @@ if ((!empty($data->tutorLocation) && !empty($data->subjectLevel)&& !empty($data-
         ));
     }
 } else {
-    
     // HTTP status code - 400 Bad Request
     http_response_code(400);
     
