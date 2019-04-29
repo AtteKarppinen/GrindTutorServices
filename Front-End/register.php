@@ -20,7 +20,7 @@
 					<button onclick="document.getElementById('id01').style.display='block'">Click here to register! </button>
 					
 					<div id="id01" class="modal">
-						<form class="modal-content animate" action="/actionPage.php">
+						<form class="modal-content" action="">
 							<div class="imgcontainer">
 								<span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
 							</div>
@@ -108,7 +108,7 @@
 					<button onclick="document.getElementById('id02').style.display='block'">Click here to register! </button>
 				
 					<div id="id02" class="modal">
-						<form class="modal-content animate" action="/actionPage.php">
+						<form class="modal-content" action="" method="post" name="sregister">
 							<div class="imgcontainer">
 							<span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
 							</div>
@@ -129,7 +129,7 @@
 								
 								<label for="confirmpassword">Confirm Password</label>
 								<input type="password" placeholder="Re-Enter Password" name="confirmpassword" required>
-								
+							
 								<button type="submit">Register</button>
 							</div>
 							
