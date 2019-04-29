@@ -21,7 +21,7 @@ $(function() {
 		.done(function(result) {
 			console.log(result);
 			if(result.Success){
-				window.location = "/Front-End/index.php";
+				window.location = "index.php";
 			}
 		})
 		.fail(function(error) {	
@@ -50,7 +50,7 @@ $(function() {
 		.done(function(result) {
 			console.log(result);
 			if(result.Success){
-				window.location = "/Front-End/index.php";
+				window.location = "index.php";
 			}
 		})
 		.fail(function(error) {	
