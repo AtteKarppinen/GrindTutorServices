@@ -20,7 +20,7 @@
 					<button onclick="document.getElementById('id01').style.display='block'">Click here to register! </button>
 					
 					<div id="id01" class="modal">
-						<form class="modal-content animate" action="/actionPage.php">
+						<form class="modal-content animate" id="tutorSubmit" action="/actionPage.php">
 							<div class="imgcontainer">
 								<span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
 							</div>
@@ -96,35 +96,7 @@
 								<input type="checkbox" name="sub19" value="Science">Science
 								<input type="checkbox" name="sub20" value="Spanish">Spanish
 								
-								<button type="submit" id="tutorSubmit">Register</button>
-								
-								<?php	
-									if(isset($_POST['firstname'])){
-										$firstName = stripslashes($_POST['firstName']);
-										$lastName = stripslashes($_POST['lastName']);
-										$email = stripslashes($_POST['email']);
-										$password = stripslashes($_POST['password']);
-										$confirmPassword = stripslashes($_POST['confirmPassword']);
-										$location = stripslashes($_POST['location']);
-										$vetting = stripslashes($_POST['vetting']);
-										$subjects = stripslashes($_POST['subjects']);
-										
-										$query = "INSERT into 'tutor' (firstName, lastName, email, password, confirmPassword, location, vetting, subjects)
-										VALUES('$firstName', '$lastName', '$email', '$password', '$confirmPassword '$location', '$vetting', '$subjects')";
-
-										$result = mysqli_query($query);
-										
-										if($result){
-											http_response_code(201);
-											
-										}
-										else
-										{
-											http_response_code(400);
-										}
-									}
-											
-								?>
+								<button type="submit">Register</button>
 							
 							</div>
 						</form>
@@ -136,7 +108,7 @@
 					<button onclick="document.getElementById('id02').style.display='block'">Click here to register! </button>
 				
 					<div id="id02" class="modal">
-						<form class="modal-content animate" action="/actionPage.php">
+						<form class="modal-content animate" id="studentSubmit" action="/actionPage.php">
 							<div class="imgcontainer">
 							<span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
 							</div>
@@ -160,29 +132,6 @@
 								
 								<button type="submit" id="studentSubmit">Register</button>
 								
-								<?php
-								
-									if(isset($_POST['firstName'])){	
-									
-										$firstName = stripslashes($_POST['firstName']);
-										$lastName = stripslashes($_POST['lastName']);
-										$email = stripslashes($_POST['email']);
-										$password = stripslashes($_POST['password']);
-										$confirmPassword = stripslashes($_POST['confirmPassword']);
-										
-										$query = "INSERT into 'student' (firstName, lastName, email, password, confirmPassword)
-										VALUES('$firstName', '$lastName', '$email', '$password', '$confirmPassword')";
-								
-										if($result){
-											http_response_code(201);
-											
-										}
-										else
-										{
-											http_response_code(400);
-										}
-									}
-								?>
 							</div>
 							
 						</form>
