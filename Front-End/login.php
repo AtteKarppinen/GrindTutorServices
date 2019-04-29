@@ -11,9 +11,9 @@
 						<h2 id="login">Tutor Log In</h2>
 					</div>
 					
-					<form class="content" action="/actionPage.php">
-						<label for="username"><b>Username</b></label>
-						<input type="text" placeholder="Enter Username" name="username" required>
+					<form id="tutorLog" class="content">
+						<label for="email">Email</label>
+						<input type="email" placeholder="Enter your Email" name="email" required>
 
 						<label for="password"><b>Password</b></label>
 						<input type="password" placeholder="Enter Password" name="password" required>
@@ -37,12 +37,12 @@
 						<h2 id="login">Student Log In</h2>
 					</div>
 					
-					<form class="content" action="/actionPage.php">
-						<label for="username"><b>Username</b></label>
-						<input type="text" placeholder="Enter Username" name="username" required>
+					<form id="studentLog" class="content">
+						<label for="email">Email</label>
+						<input type="email" placeholder="Enter your Email" id="email" required>
 
 						<label for="password"><b>Password</b></label>
-						<input type="password" placeholder="Enter Password" name="password" required>
+						<input type="password" placeholder="Enter Password" id="password" required>
 
 						<label id="remember">
 							<input type="checkbox" name="remember"> Remember me

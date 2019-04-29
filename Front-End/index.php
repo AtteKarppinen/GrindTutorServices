@@ -13,7 +13,26 @@
 				</div>
 				
 				<div class="rightSideTop">
-					<img id="students" src="Images/students.jpg" alt="Students">
+					<div class="slideshow_container">
+						
+						<div class="mySlides fade">
+							<img id="students" src="Images/students.jpg" alt="Students">
+						</div>
+						
+						<div class="mySlides fade">
+							<img id="students" src="Images/tutor.jpg" alt="Tutors">
+						</div>
+						
+						<div class="mySlides fade">
+							<img id="students" src="Images/computer.png" alt="Computers">
+						</div>
+					</div>
+					<br>
+					<div style="text-align:center">
+						<span class="dot"></span> 
+						<span class="dot"></span> 
+						<span class="dot"></span> 
+					</div>
 				</div>
 			</div>
 		</div>
@@ -115,6 +134,9 @@
 				</div>
 			</div>
 		</div>
+		
+		<script type="text/javascript" src="slideshow.js"></script>
+		
 	</body>
 
 </html>
