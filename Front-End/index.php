@@ -13,8 +13,7 @@
 				</div>
 				
 				<div class="rightSideTop">
-					<div class="slideshowContainer">
-						
+					<div class="slideshowContainer">						
 						<div class="mySlides fade">
 							<img id="students" src="Images/students.jpg" alt="Students">
 						</div>

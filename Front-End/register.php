@@ -20,7 +20,8 @@
 					<button onclick="document.getElementById('id01').style.display='block'">Click here to register! </button>
 					
 					<div id="id01" class="modal">
-						<form class="modal-content" action="">
+            
+						<form id="tutorSubmit" class="modal-content animate">
 							<div class="imgcontainer">
 								<span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
 							</div>
@@ -97,8 +98,8 @@
 								<input type="checkbox" name="sub20" value="Spanish">Spanish
 								
 								<button type="submit">Register</button>
-							</div>
 							
+							</div>
 						</form>
 					</div>	
 				</div>
@@ -108,7 +109,7 @@
 					<button onclick="document.getElementById('id02').style.display='block'">Click here to register! </button>
 				
 					<div id="id02" class="modal">
-						<form class="modal-content" action="" method="post" name="sregister">
+						<form id="studentSubmit" class="modal-content animate">
 							<div class="imgcontainer">
 							<span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
 							</div>
@@ -116,20 +117,20 @@
 							<div class="regcontainer">
 								<h1>Student Registration</h1>
 								<label for="fname">First Name</label>
-								<input type="text" placeholder="Enter your First Name" name="fname" required>
+								<input type="text" placeholder="Enter your First Name" id="firstName" required>
 								
 								<label for="lname">Last Name</label>
-								<input type="text" placeholder="Enter your Last Name" name="lname" required>
+								<input type="text" placeholder="Enter your Last Name" id="lastName" required>
 								
 								<label for="email">Email</label>
-								<input type="email" placeholder="Enter your Email" name="email" required>
+								<input type="email" placeholder="Enter your Email" id="email" required>
 
 								<label for="password">Password</label>
-								<input type="password" placeholder="Create Password" name="password" required>
+								<input type="password" placeholder="Create Password" id="password" required>
 								
 								<label for="confirmpassword">Confirm Password</label>
-								<input type="password" placeholder="Re-Enter Password" name="confirmpassword" required>
-							
+								<input type="password" placeholder="Re-Enter Password" id="confirmpassword" required>
+                
 								<button type="submit">Register</button>
 							</div>
 							
