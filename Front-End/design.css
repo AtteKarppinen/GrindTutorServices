@@ -1,101 +1,201 @@
 body {
 	background-color: lightgreen;
+	font-family: "Lucida Grande", sans-serif;
+	color: rgb(16, 80, 128);
 }
 
 /* -----------------Navigation Bar ---------------------*/
 
-ul {
-	list-style-type: none;
-	margin: 0;
-	padding: 0;
+#navbar {
 	overflow: hidden;
 	background-color: rgb(28, 138, 67);
+	/* Make navbar to be on top of everything */
 	position: fixed;
-	top: 0;
+	z-index: 1000;
+	height: 57px;
 	width: 100%;
-	display:inline-block;
+	top: 0;
 }
 
-li {
-	float: right;
-	font-family: "Lucida Grande", sans-serif;
-}
-
-li a {
-	display: block;
+#navbar a {
+	float: left;
 	color: white;
 	text-align: center;
 	padding: 16px 30px;
 	text-decoration: none;
-}
-
-li a:hover {
-  background-color: lightgreen;
-  color: rgb(15, 77, 131);
+	font-size: 18px;
+	line-height: 25px;
 }
 
 #navbar #logo {
 	height: 60px;
-	padding-left: 50px;
+	padding-left: 30px;
 }
 
-/* Home Page */
-
-.item1 { 
-	grid-area: description;
-	font-family: "Lucida Grande", sans-serif;
-}
-.item2 { grid-area: image; }
-.item3 { 
-	grid-area: title; 
-	background-color: #d3f8d3;
-	color: black;
-	border-radius: 5px;
+#navbar a:hover {
+  background-color: lightgreen;
+  color: rgb(15, 77, 131);
 }
 
-.item4 {
-	grid-area: search;
-	border-radius: 5px;
-	background-color: #bcf5bc;
+#navbar-right {
+	float: right;
+}
+
+/* ---------------------Home Page----------------------- */
+
+.container {
 	padding: 20px;
 }
 
-.item5 { 
-	grid-area: heading; 
-	font-family: "Lucida Grande", sans-serif;
+.row:after {
+	content: "";
+    display: table;
+    clear: both
 }
-.item6 {
-	grid-area: tutor1;
-	background-color: #d3f8d3;
 
+.leftSideTop {
+	float: left;
+	width: 34%;
+	padding: 20px;
+	text-align: center;
+	font-size: 2vw;
 }
-.item7 {
-	grid-area: tutor2;
+
+.rightSideTop {
+	float: left;
+	width: 66%;
+	padding: 20px;
+}
+
+.leftSideMiddle {
+	float: left;
+	width: 34%;
+	padding: 20px;
 	background-color: #d3f8d3;
+	border-radius: 5px;
+	padding-bottom: 110px;
+	padding-top: 117px;
+	text-align: center;
+	border-style: solid;
+	border-width: 1px;
+	border-color: lightgreen;
+}
+
+.rightSideMiddle {
+	float: left;
+	width: 66%;
+	padding: 20px;
+	border-radius: 5px;
+	background-color: #bcf5bc;
+	border-style: solid;
+	border-width: 1px;
+	border-color: lightgreen;
+}
+
+.tutors {
+	text-align: center;
+}
+
+.bottom {
+	float: left;
+	width: 50%;
+	padding: 20px;
+	text-align: center;
+	background-color: #d3f8d3;
+	border-radius: 5px;
+	border-style: solid;
+	border-width: 1px;
+	border-color: lightgreen
+}
+
+#roundedImage {
+	border-radius: 50%;
+}
+
+/*----------------------Slideshow------------*/
+
+.mySlides {
+	display: none;
+}
+
+#students {
+	vertical-align: middle;
+	display: block;
+	height: auto;
+	max-width: 100%;
+	/* Same height as smallest image's height */
+	max-height: 480px; 
 	border-radius: 5px;
 }
 
-.grid-container {
-	display: grid;
-	grid-template-areas:
-	'description description image image image image'
-	'title title search search search search'
-	'heading heading heading heading heading heading'
-	'tutor1 tutor1 tutor1 tutor2 tutor2 tutor2';
-	grid-gap: 1px;
-	background-color: lightgreen;
-	padding: 10px;
+
+.slideshowContainer {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
 }
 
-.grid-container > div {
+.dot {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active {
+  background-color: #717171;
+}
+
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .text {font-size: 11px}
+}
+
+/* --------About-------- */
+
+.aboutText{ 
 	text-align: center;
-	padding: 20px ;
+	font-size: 2vw;
+}
+
+.descImg { 
+	text-align: center;
+}
+
+.aboutHeader {
+	text-align: center;
+	padding: 10px ;
 	font-size: 30px;
 	font-family: "Lucida Grande", sans-serif;
 }
 
-#roundedImage {
-  border-radius: 50%;
+.aboutBody{
+	font-size: 2vw;
+	text-align: center;
+}
+
+#roundedImage2 {
+	border-radius: 10%;	
 }
 
 /*-----------------Search Form on Home Page-----------------*/
@@ -127,34 +227,24 @@ input[type=submit]:hover {
 
 /* ----------------Login Page----------------------- */
 
-.tutorlogin { 
-	grid-area: tutor;
+.tutorLogin { 
 	background-color: #bcf5bc;
 	border-radius: 5px;
-	color: rgb(16, 80, 128);
+	float: left;
+	width: 50%;
+	border-style: solid;
+	border-color: lightgreen;
 }
 
-.studentlogin { 
+.studentLogin { 
 	grid-area: student;
 	background-color: #d3f8d3;
 	border-radius: 5px;
 	text-align: left;
-	color: rgb(16, 80, 128);
-}
-
-.loginContainer {
-	display: grid;
-	grid-template-areas: 'tutor tutor tutor student student student'; 
-	grid-gap: 5px;
-	background-color: lightgreen;
-	padding: 10px;
-}
-
-.loginContainer > div {
-	text-align: center;
-	padding: 20px ;
-	font-size: 30px;
-	font-family: "Lucida Grande", sans-serif;
+	float: left;
+	width: 50%;
+	border-style: solid;
+	border-color: lightgreen;
 }
 
 input[type=text], input[type=password], input[type=email] {
@@ -186,6 +276,8 @@ button:hover {
 	background-color: #4CAF50;
 	border-radius: 5px;
 	color: white;
+	padding: 2px;
+	font-size: 2vw;
 }
 
 .bottomcontainer {
@@ -193,14 +285,12 @@ button:hover {
 	background-color:#f1f1f1; 
 	text-align: center;
 	border-radius: 5px;
-	color: rgb(16, 80, 128);
 }
 
 a {
 	text-decoration: none;
 	font-size: 15px;
 	color: blue;
-	
 }
 
 .psw a {
@@ -228,43 +318,23 @@ span.reg {
 
 /*----------------Registration Page---------------------*/
 
-.topreg {
-	grid-area: top;
+.topReg {
 	background-color: rgb(234, 244, 246);
+	text-align: center;
 	border-radius: 5px;
-	color: rgb(16, 80, 128);
+	padding: 20px;
+	font-size: 2vw;
 }
 
-.tutorreg { 
-	grid-area: tutor;
+.register {
+	padding: 20px;
 	background-color: #bcf5bc;
 	border-radius: 5px;
-	color: rgb(16, 80, 128);
-}
-
-.studentreg { 
-	grid-area: student;
-	background-color: #d3f8d3;
-	border-radius: 5px;
-	text-align: left;
-	color: rgb(16, 80, 128);
-}
-
-.regcontent {
-	display: grid;
-	grid-template-areas: 
-	'top top top top top top'
-	'tutor tutor tutor student student student'; 
-	grid-gap: 5px;
-	background-color: lightgreen;
-	padding: 10px;
-}
-
-.regcontent > div {
 	text-align: center;
-	padding: 20px ;
-	font-size: 30px;
-	font-family: "Lucida Grande", sans-serif;
+	width: 50%;
+	float: left;
+	border-style: solid;
+	border-color: lightgreen;
 }
 
 .imgcontainer {
@@ -297,6 +367,7 @@ span.reg {
 	border: 1px solid #888;
 	width: 80%; 
 	text-align: left;
+	padding: 20px;
 }
 
 /* The Close Button (x) */
@@ -314,4 +385,50 @@ span.reg {
 .close:focus {
 	color: red;
 	cursor: pointer;
+}
+
+/*------------Profile Page-----------------*/
+
+.fakeimg {
+	height:200px;
+	background-color: #aaa;
+	width: 100%;
+	padding: 20px;
+}
+
+ *{
+  box-sizing: border-box;
+}
+
+.leftcolumn {
+	float: left;
+	width: 25%;
+}
+
+.rightcolumn {
+	float: left;
+	width: 75%;
+	padding-left: 20px;
+}
+
+.card {
+	background-color: white;
+   padding: 20px;
+   margin-top: 20px;
+   border-radius: 5px;
+}
+
+/*-----------------Animation----------------*/
+#animate_background {
+	background-color: rgb(28, 138, 67);
+}
+
+#logo_animation {
+	width: 60%;
+	height: 40%;
+}
+
+#responsive_logo {
+	width: 100%;
+	height: auto;
 }
