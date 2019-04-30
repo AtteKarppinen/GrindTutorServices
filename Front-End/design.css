@@ -9,7 +9,9 @@ body {
 #navbar {
 	overflow: hidden;
 	background-color: rgb(28, 138, 67);
+	/* Make navbar to be on top of everything */
 	position: fixed;
+	z-index: 1000;
 	height: 57px;
 	width: 100%;
 	top: 0;
