@@ -20,8 +20,8 @@
 					<button onclick="document.getElementById('id01').style.display='block'">Click here to register! </button>
 					
 					<div id="id01" class="modal">
+            
 						<form id="tutorSubmit" class="modal-content animate">
-							
 							<div class="imgcontainer">
 								<span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
 							</div>
@@ -130,9 +130,8 @@
 								
 								<label for="confirmpassword">Confirm Password</label>
 								<input type="password" placeholder="Re-Enter Password" id="confirmpassword" required>
-								
+                
 								<button type="submit">Register</button>
-								
 							</div>
 							
 						</form>
