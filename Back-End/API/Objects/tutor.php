@@ -134,12 +134,65 @@
                     return true;
                 }
                 catch(PDOException $e) {
+                    echo $e;
                     return false;
                 }          
             }
             else {
                 return false;
             }
+        }
+
+        // Same like in registration, expect data in body
+        function login() {
+
+            // Validate user input
+            $this->t_email      = testInput($this->t_email);
+            $this->t_password   = testInput($this->t_password);
+
+            // Fetch data from db with given email
+            $result = $this->conn->query("SELECT * FROM $this->tableName WHERE t_email LIKE '$this->t_email'");
+
+            // Check that tutor exists in database
+            if ($result->rowCount() === 1) {
+
+                // Fetch user record from result
+                $user = $result->fetch();
+
+                // Check password match
+                if (password_verify($this->t_password, $user["t_password"])) {
+                    return true;
+                }
+                // Passwords do not match
+                else {
+                    return false;
+                }
+            }
+            // User with given email not in database
+            else {
+                return false;
+            }
+        }
+
+        // Fetch user ID
+        function fetchID() {
+
+            // FIXME For some reason t_email = $this->t_email results in SQL error
+            // Using conn->query also makes this vulnerable to SQL injection
+            // But prepare and execute refused to work for me
+            $query = "SELECT t_num FROM $this->tableName WHERE t_email LIKE '$this->t_email'";
+
+            try {
+                $result = $this->conn->query($query);
+            }
+            catch (PDOException $e) {
+                echo $e;
+            }
+
+            // Fetch tutor ID as integer
+            $tutorID = (int)$result->fetchColumn();
+
+            return $tutorID;
         }
 
          // Update tutor record
@@ -191,6 +244,7 @@
                     return true;
                 }
                 catch(PDOException $e) {
+                    echo $e;
                     return false;
                 }
             }
@@ -222,6 +276,7 @@
                     return true;
                 }
                 catch(PDOException $e) {
+                    echo $e;
                     return false;
                 }
             }
