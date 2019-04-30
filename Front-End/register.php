@@ -117,19 +117,19 @@
 							<div class="regcontainer">
 								<h1>Student Registration</h1>
 								<label for="fname">First Name</label>
-								<input type="text" placeholder="Enter your First Name" name="fname" required>
+								<input type="text" placeholder="Enter your First Name" id="firstName" required>
 								
 								<label for="lname">Last Name</label>
-								<input type="text" placeholder="Enter your Last Name" name="lname" required>
+								<input type="text" placeholder="Enter your Last Name" id="lastName" required>
 								
 								<label for="email">Email</label>
-								<input type="email" placeholder="Enter your Email" name="email" required>
+								<input type="email" placeholder="Enter your Email" id="email" required>
 
 								<label for="password">Password</label>
-								<input type="password" placeholder="Create Password" name="password" required>
+								<input type="password" placeholder="Create Password" id="password" required>
 								
 								<label for="confirmpassword">Confirm Password</label>
-								<input type="password" placeholder="Re-Enter Password" name="confirmpassword" required>
+								<input type="password" placeholder="Re-Enter Password" id="confirmpassword" required>
 								
 								<button type="submit">Register</button>
 								

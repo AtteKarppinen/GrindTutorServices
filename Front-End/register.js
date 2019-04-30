@@ -20,12 +20,13 @@ window.onclick = function(event) {
 $("#studentSubmit").submit(function(button){
 	button.preventDefault();
 	
-	alert("worked");
-	
 	const firstName = $("#firstName").val();
 	const lastName = $("#lastName").val();
-	const birthday = $("#birthday").val();
-	const sex = $("#sex").val();
+	// const birthday = $("#birthday").val();
+	// const sex = $("#sex").val();
+	// TODO: add sex and birthday into forms
+	const birthday = "2000-01-01";
+	const sex = "M";
 	const email = $("#email").val();
 	const password = $("#password").val();
 	//const confirmPassword = $(#confirmPassword).val();
@@ -36,19 +37,31 @@ $("#studentSubmit").submit(function(button){
 		birthday: birthday,
 		sex: sex,
 		email: email, 
-		password: password}; 
+		password: password
+	}; 
 		
 	const data = JSON.stringify(studentData);
+
+	console.log(studentData);
+	
 	
 	var settings = {
-	  "url": "http://134.209.83.193/GrindTutorServices/Back-End/API/Student/register.php",
-	  "method": "POST",
-	  "data": "data"
+	  url: "http://134.209.83.193/GrindTutorServices/Back-End/API/Student/register.php",
+	  method: "POST",
+	  data: data
 	};
 
-	$.ajax(settings).done(function (response) {
-	  console.log(response);
-});
+	$.ajax(settings)
+	.done(function (response) {
+	  console.log(response.Success);
+
+	  if (response.Success) {
+		window.location = "login.php";
+	  }
+	})
+	.fail(function(error) {
+		console.log(error, error.status);
+	});
 });
 
 $("#tutorSubmit").submit(function(button){
