@@ -46,14 +46,14 @@
 
         function fetchDetail(){
             $query = 
-            "select contract_num, t_fname, t_lname , s_fname, s_lname , contract_subject_num 
-            from 
-            (select contract_num, t_fname, t_lname , contract_student_num, contract_subject_num
-            from Tutor_table
-            join $this->tableName
-            on Tutor_table.t_num = $this->tableName.contract_num) as col
-            join Student_table
-            on col.contract_student_num = Student_table.s_num";
+            "SELECT contract_num, t_fname, t_lname , s_fname, s_lname , contract_subject_num 
+            FROM 
+            (SELECT contract_num, t_fname, t_lname , contract_student_num, contract_subject_num
+            FROM Tutor_table
+            JOIN $this->tableName
+            ON Tutor_table.t_num = $this->tableName.contract_num) AS col
+            JOIN Student_table
+            ON col.contract_student_num = Student_table.s_num";
 
             //Prepare query statement
             $contract = $this->conn->prepare($query);
@@ -62,8 +62,6 @@
             $contract->execute();
 
             return $contract;
-            
-
         }
 
         // Fetch contract with Number
@@ -106,6 +104,7 @@
                 return true;
             }
             catch(PDOException $e) {
+                echo $e;
                 return false;
             }
         }
@@ -181,6 +180,7 @@
                     return true;
                 }
                 catch(PDOException $e) {
+                    echo $e;
                     return false;
                 }
             }
