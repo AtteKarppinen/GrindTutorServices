@@ -1,7 +1,7 @@
 <?php
 
 /*
-    This script is resbonsible for fetching contracts from 
+    This script is resbonsible for fetching contracts join the student and tutor from 
     database and returning them in json-format.
 
     Now $contract->read() call returns every contract
@@ -28,9 +28,9 @@
     $contract = new Contract($db);
 
     // Query contracts
-    $contracts = $contract->fetchAll();
+    $contracts = $contract->fetchDetail();
     $num = $contracts->rowCount();
-    
+    echo $num;
     // Check if more than 0 record found
     if ($num > 0) {
     
@@ -39,14 +39,16 @@
     
         // Retrieve our table contents
         while ($row = $contracts->fetch(PDO::FETCH_ASSOC)) {
-            
+            echo $num;
             extract($row);
     
             // "Description for data" => Contract property (fields from db)
             $contractItem=array(
                 "Contract number" => $contract_num,
-                "Contract student number" => $contract_student_num,
-                "Contract tutor number" => $contract_tutor_num,
+                "Contract tutor fname" => $t_fname,
+                "Contract tutor lname" => $t_lname,
+                "Contract student fname" => $s_fname,
+                "Contract student lname" => $s_lname,
                 "Contract subject number" => $contract_subject_num
             );
             array_push($contractsArray["Contracts"], $contractItem);

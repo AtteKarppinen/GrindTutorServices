@@ -20,6 +20,7 @@
         public $contract_student_num;
         public $contract_tutor_num;
         public $contract_subject_num;
+        
     
         // Constructor with $db as database connection
         public function __construct($db) {
@@ -41,6 +42,30 @@
             return $contract;
         }
 
+        // Fetch contract detail 
+
+        function fetchDetail(){
+            $query = 
+            "select contract_num, t_fname, t_lname , s_fname, s_lname , contract_subject_num 
+            from 
+            (select contract_num, t_fname, t_lname , contract_student_num, contract_subject_num
+            from Tutor_table
+            join $this->tableName
+            on Tutor_table.t_num = $this->tableName.contract_num) as col
+            join Student_table
+            on col.contract_student_num = Student_table.s_num";
+
+            //Prepare query statement
+            $contract = $this->conn->prepare($query);
+
+            // Execute query
+            $contract->execute();
+
+            return $contract;
+            
+
+        }
+
         // Fetch contract with Number
         function fetchWithNumber() {
 
@@ -54,6 +79,38 @@
             $contract->execute();
         
             return $contract;
+        }
+
+
+        // All data is sent in request's body, no need for parameters
+        function makecontract() {
+            echo $this->contract_student_num;
+            echo $this->contract_tutor_num;
+            echo $this->contract_subject_num;
+            
+            // Validate user input
+            $this->contract_student_num  = testInput($this->contract_student_num);
+            $this->contract_tutor_num    = testInput($this->contract_tutor_num);
+            $this->contract_subject_num  = testInput($this->contract_subject_num);
+            // Insert query 
+            $query = "INSERT INTO $this->tableName (contract_student_num, contract_tutor_num, contract_subject_num)
+                        VALUES(:studentnumber, :tutornumber, :subjectnumber)";
+
+            // Prepare insert statement
+            $insert = $this->conn->prepare($query);
+
+            $insert->bindParam(":studentnumber", $this->contract_student_num);
+            $insert->bindParam(":tutornumber", $this->contract_tutor_num);
+            $insert->bindParam(":subjectnumber", $this->contract_subject_num);
+
+            // Send new user to DB
+            try {
+                $insert->execute();
+                return true;
+            }
+            catch(PDOException $e) {
+                return false;
+            }
         }
 
         
