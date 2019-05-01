@@ -84,9 +84,6 @@
 
         // All data is sent in request's body, no need for parameters
         function makecontract() {
-            echo $this->contract_student_num;
-            echo $this->contract_tutor_num;
-            echo $this->contract_subject_num;
             
             // Validate user input
             $this->contract_student_num  = testInput($this->contract_student_num);
