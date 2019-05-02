@@ -1,41 +1,47 @@
-CREATE DATABASE Grind_tutor;
-use girnd_tutor;
-CREATE TABLE student (
-	student_number int AUTO_INCREMENT PRIMARY KEY ,
-    Fname Varchar(100),
-    Lname Varchar(100),
-    Bdate DATE,
-    Sex CHAR(4),
-    Address TEXT,
-    Location Point
+/* Subject table basic info */
+
+create table Subject_table(
+subject_num int AUTO_INCREMENT PRIMARY KEY,
+subject_name varchar(100) not null,
+subject_level varchar(2) 
 );
 
-CREATE TABLE tutor (
-	tutor_number int AUTO_INCREMENT PRIMARY KEY,
-    Fname Varchar(100),
-    Lname Varchar(100),
-    Bdate DATE,
-    Sex CHAR(4),
-    Address TEXT,
-    Location Point,
-    desire_tuition_fee INT,
-    t_subject_number INT,
-    CONSTRAINT FK_t_subjectnum FOREIGN KEY (t_subject_number) REFERENCES Subject(subject_number)
+
+/*Tutor table. Has its own values and also uses references from user table meaning : YOU CAN'T BE A TUTOR IF YOU'RE NOT A USER 
+Takes values from sign up and sets them here if you become a tutor*/
+
+create table Tutor_table(
+t_num int AUTO_INCREMENT PRIMARY KEY,
+t_fname varchar(100) not null,
+t_lname varchar(100) not null,
+t_bdate DATE not null ,
+t_sex char(4),
+t_email varchar(100) not null,
+t_password varchar(255) not null,
+t_address text not null,
+t_location point,
+t_fee float (5,2),
+t_user_num int(11),
+t_subject_num int(11)references subject_table(subject_num)
 );
 
-CREATE TABLE Subject(
-	subject_number int AUTO_INCREMENT PRIMARY KEY,
-    name Varchar(100),
-    level int
+/* Student table same as tutor, can't be student without being a user first */
+create table Student_table(
+s_num int AUTO_INCREMENT PRIMARY KEY,
+s_fname varchar(100) not null ,
+s_lname varchar(100) not null ,
+s_email varchar(100) not null,
+s_password varchar(255) not null ,
+s_bdate DATE not null ,
+s_sex char(4) not null,
+s_address TEXT, 
+s_location Point
 );
 
-CREATE TABLE contract(
-    contract_number int AUTO_INCREMENT PRIMARY KEY,
-    c_student_number int,
-    c_tutor_number int,
-    c_subject_number int,
-    CONSTRAINT FK_c_studentnum FOREIGN KEY (c_student_number) REFERENCES Student(student_number),
-    CONSTRAINT FK_c_tutornum FOREIGN KEY(c_tutor_number) REFERENCES Tutor(tutor_number),
-    CONSTRAINT FK_c_subjectnum FOREIGN KEY(c_subject_number) REFERENCES Subject(sujbect_number)
+/* Contract table with foreign keys from 3 tables */
+CREATE TABLE Contract_table(
+    contract_num int AUTO_INCREMENT PRIMARY KEY,
+    contract_student_num int REFERENCES student(s_num),
+    contract_tutor_num int REFERENCES tutor(t_num),
+    contract_subject_num int REFERENCES subject_table(subject_num)
 );
-
