@@ -4,8 +4,8 @@ $(function() {
 	$("#tutorLog").submit(function(button) {
 		button.preventDefault();
 		
-		const email = $("#email").val();
-		const pword = $("#password").val(); 
+		const email = $("#tutorEmail").val();
+		const pword = $("#tutorPassword").val(); 
 		
 		const obj = { 
 			email: email, 
@@ -26,7 +26,10 @@ $(function() {
 		})
 		.fail(function(error) {	
 			console.log(error.responseJSON, error.status);
-		})
+			if(error.responseJSON.Message === "Wrong Email Or Password") {
+				alert("Invalid Email Or Password");
+			}
+		});
 	});
 
 	// STUDENT
@@ -55,9 +58,9 @@ $(function() {
 		})
 		.fail(function(error) {	
 			console.log(error.responseJSON, error.status);
-			if(error.responseJSON) {
-				alert("invalid password");
+			if(error.responseJSON.Message === "Wrong Email Or Password") {
+				alert("Invalid Email Or Password");
 			}
-		})
+		});
 	});
 });
