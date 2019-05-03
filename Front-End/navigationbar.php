@@ -1,3 +1,7 @@
+<?php
+	session_start();
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -16,9 +20,16 @@
 			<div id="navbar-right">
 				<a href="index.php">Home</a>
 				<a href="about.php">About Us</a>
-				<a href="register.php">Register</a>
-				<a href="login.php">Login</a>
-				<a href="myAccount.php">My Account</a>
+				<?php
+				if (isset($_SESSION["loggedIn"]) && $_SESSION["loggedIn"] === true) {
+					echo "<a href='register.php'>Register</a>";
+					echo "<a href='logout.php'>Logout</a>";
+					echo "<a href='myAccount.php'>My Account</a>";
+				}
+				else {
+					echo "<a href='login.php'>Login</a>";
+				}
+				?>
 			</div>
 		</div>
 		<br><br><br>
