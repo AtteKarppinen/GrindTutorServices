@@ -5,7 +5,5 @@ function myFunction() {
 }
 
 function showPage() {
-	window.location.replace("http://localhost/Front-End/index.php")
-	/*http://134.209.83.193/GrindTutorServices/Front-End/index.php*/
-	
+	window.location.replace("http://134.209.83.193/GrindTutorServices/Front-End/index.php")	
 }
