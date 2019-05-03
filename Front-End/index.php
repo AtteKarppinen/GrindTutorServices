@@ -8,7 +8,7 @@
 			<div class="row">
 				<div class="leftSideTop">
 					<p>
-						<br><br><br>Here at Find a Grind we help you find the tutor best suited to you that will provide you with one on one help to get you the results you deserve.
+						<br><br><br>Here at Find a Grind we help you find a tutor best suited to you that will provide one on one help to get the results you deserve
 					</p>
 				</div>
 				
@@ -118,7 +118,7 @@
 					<img id="roundedImage"src="Images/john.jpg" alt="Male Tutor">
 					<br>
 					<p>
-						Junior & Leaving Cert Biology & Chemistry <br>Dublin 2
+						Leaving Cert Biology <br>Dublin 2
 					</p>
 				</div>
 				
@@ -128,7 +128,7 @@
 					<img id="roundedImage"src="Images/julie.jpg" alt="Female Tutor">
 					<br>
 					<p>
-						Junior & Leaving Cert Geography & French Oral <br>Dublin 5
+						Junior Cert Geography <br>Dublin 5
 					</p>
 				</div>
 			</div>
