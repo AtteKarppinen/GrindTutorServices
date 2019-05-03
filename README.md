@@ -1,7 +1,5 @@
 # Grind Tutor Services
 
-# Pull Requests
-When a feature is finished, make a pull request to Dev branch
 
 # Team C - Team Members
 
@@ -11,3 +9,8 @@ When a feature is finished, make a pull request to Dev branch
   - Atte Karppinen
   - Dominik Dobrowolski
   - SeMin Oh
+
+# Set Up
+Copy animate.html in the same folder as GrindTutorServices -folder
+Rename it index.html
+This works as a landing page for the project
