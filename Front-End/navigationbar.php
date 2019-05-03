@@ -21,12 +21,12 @@
 				<a href="about.php">About Us</a>
 				<?php
 				if (isset($_SESSION["loggedIn"]) && $_SESSION["loggedIn"] === true) {
-					echo "<a href='register.php'>Register</a>";
 					echo "<a href='logout.php'>Logout</a>";
 					echo "<a href='myaccount.php'>My Account</a>";
 				}
 				else {
 					echo "<a href='login.php'>Login</a>";
+					echo "<a href='register.php'>Register</a>";
 				}
 				?>
 			</div>
