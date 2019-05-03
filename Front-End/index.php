@@ -42,61 +42,61 @@
 				</div>
 				
 				<div class="rightSideMiddle">
-					<form action="/actionPage.php">
-						<select>
+					<form action="search.php" method ="get">
+						<select name="cycle">
 							<option value="default">Choose a Cycle</option>
-							<option value="junior">Junior Cycle</option>
-							<option value="senior">Senior Cycle</option>
+							<option value="Junior Cycle">Junior Cycle</option>
+							<option value="Senior Cycle">Senior Cycle</option>
 						</select>
 						<br>
-						<select>
+						<select name="subject">
 							<option value="default">Choose a Subject</option>
-							<option value="accounting">Accounting</option>
-							<option value="art">Art</option>
-							<option value="biology">Biology</option>
-							<option value="business">Business Studies</option>
-							<option value="chemistry">Chemistry</option>
-							<option value="classics">Classical Studies</option>
-							<option value="economics">Economics</option>
-							<option value="english">English</option>
-							<option value="french">French</option>
-							<option value="gaeilge">Gaeilge</option>
-							<option value="geography">Geography</option>
-							<option value="german">German</option>
-							<option value="history">History</option>
-							<option value="homeec">Home Economics</option>
-							<option value="maths">Maths</option>
-							<option value="music">Music</option>
-							<option value="physics">Physics</option>
-							<option value="re">Religious Education</option>
-							<option value="science">Science</option>
-							<option value="spanish">Spanish</option>
+							<option value="Accounting">Accounting</option>
+							<option value="Art">Art</option>
+							<option value="Biology">Biology</option>
+							<option value="Business Studies">Business Studies</option>
+							<option value="Chemistry">Chemistry</option>
+							<option value="Classical Studies">Classical Studies</option>
+							<option value="Economics">Economics</option>
+							<option value="English">English</option>
+							<option value="French">French</option>
+							<option value="Gaeilge">Gaeilge</option>
+							<option value="Geography">Geography</option>
+							<option value="German">German</option>
+							<option value="History">History</option>
+							<option value="Home Economics">Home Economics</option>
+							<option value="Maths">Maths</option>
+							<option value="Music">Music</option>
+							<option value="Physics">Physics</option>
+							<option value="Religious Education">Religious Education</option>
+							<option value="Science">Science</option>
+							<option value="Spanish">Spanish</option>
 						</select>
 						<br>
-						<select>
+						<select name="location">
 							<option value="default">Choose your Location</option>
-							<option value="1">Dublin 1</option>
-							<option value="2">Dublin 2</option>
-							<option value="3">Dublin 3</option>
-							<option value="4">Dublin 4</option>
-							<option value="5">Dublin 5</option>
-							<option value="6">Dublin 6</option>
-							<option value="6W">Dublin 6W</option>
-							<option value="7">Dublin 7</option>
-							<option value="8">Dublin 8</option>
-							<option value="9">Dublin 9</option>
-							<option value="10">Dublin 10</option>
-							<option value="11">Dublin 11</option>
-							<option value="12">Dublin 12</option>
-							<option value="13">Dublin 13</option>
-							<option value="14">Dublin 14</option>
-							<option value="15">Dublin 15</option>
-							<option value="16">Dublin 16</option>
-							<option value="17">Dublin 17</option>
-							<option value="18">Dublin 18</option>
-							<option value="20">Dublin 20</option>
-							<option value="22">Dublin 22</option>
-							<option value="24">Dublin 24</option>
+							<option value="Dublin 1">Dublin 1</option>
+							<option value="Dublin 2">Dublin 2</option>
+							<option value="Dublin 3">Dublin 3</option>
+							<option value="Dublin 4">Dublin 4</option>
+							<option value="Dublin 5">Dublin 5</option>
+							<option value="Dublin 6">Dublin 6</option>
+							<option value="Dublin 6W">Dublin 6W</option>
+							<option value="Dublin 7">Dublin 7</option>
+							<option value="Dublin 8">Dublin 8</option>
+							<option value="Dublin 9">Dublin 9</option>
+							<option value="Dublin 10">Dublin 10</option>
+							<option value="Dublin 11">Dublin 11</option>
+							<option value="Dublin 12">Dublin 12</option>
+							<option value="Dublin 13">Dublin 13</option>
+							<option value="Dublin 14">Dublin 14</option>
+							<option value="Dublin 15">Dublin 15</option>
+							<option value="Dublin 16">Dublin 16</option>
+							<option value="Dublin 17">Dublin 17</option>
+							<option value="Dublin 18">Dublin 18</option>
+							<option value="Dublin 20">Dublin 20</option>
+							<option value="Dublin 22">Dublin 22</option>
+							<option value="Dublin 24">Dublin 24</option>
 						</select>
 						<br><br>
 						<input type="submit" value="Submit">
