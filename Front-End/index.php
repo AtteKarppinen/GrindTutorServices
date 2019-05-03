@@ -2,6 +2,7 @@
 	include("navigationbar.php");
 ?>
 <html>
+    
 	<body>
 		<div class="container">
 			<div class="row">
