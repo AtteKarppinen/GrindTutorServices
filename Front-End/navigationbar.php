@@ -24,7 +24,7 @@
 				if (isset($_SESSION["loggedIn"]) && $_SESSION["loggedIn"] === true) {
 					echo "<a href='register.php'>Register</a>";
 					echo "<a href='logout.php'>Logout</a>";
-					echo "<a href='myAccount.php'>My Account</a>";
+					echo "<a href='myaccount.php'>My Account</a>";
 				}
 				else {
 					echo "<a href='login.php'>Login</a>";
