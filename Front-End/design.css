@@ -419,18 +419,3 @@ span.reg {
    margin-top: 20px;
    border-radius: 5px;
 }
-
-/*-----------------Animation----------------*/
-#animate_background {
-	background-color: rgb(28, 138, 67);
-}
-
-#logo_animation {
-	width: 60%;
-	height: 40%;
-}
-
-#responsive_logo {
-	width: 100%;
-	height: auto;
-}
