@@ -5,6 +5,7 @@
 
     API call is made using POST to this script.
 */
+    session_start();
 
     // Required headers
     // First line allows API calls from any address
@@ -47,6 +48,9 @@
             $tutorID = $tutor->fetchID();
 
             array_push($successArray["Success"], array("User ID" => $tutorID, "Token" => "TBA"));
+
+            // Session variable
+            $_SESSION["loggedIn"] = true;
 
             // HTTP status code - 200 OK
             http_response_code(200);
