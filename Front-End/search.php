@@ -1,11 +1,17 @@
 <?php
+/*
+    Due to limited time this script got approved.
+    It should fetch this data using API, this way 
+    there is no way to implement tokens and gives way too
+    much power to the user.
+    But at its current state project is not safe at all to begin with.
+*/
 	session_start();
     include("navigationbar.php");
     if ( isset( $_GET["cycle"] ) && isset($_GET["subject"]) && isset($_GET["location"])) {
         $cycle = $_GET["cycle"];
         $subject = $_GET["subject"];
         $location = $_GET["location"];
-
 
         include_once "../Back-End/API/Config/database.php";
         include_once "../Back-End/API/Objects/tutor.php";
@@ -60,18 +66,10 @@
         } else {
             echo "not found.... 404";
         }
-        
-        
-
     }
     else{
         echo "error";
-
     }
-
-    
-
-
 ?>
 
 	<body>
@@ -115,12 +113,8 @@
                         </div>";
                     echo "</div>";
                 }
-                
             ?>
-
-		</div>
-        
+		</div>      
 	</body>
-
 </html>
 
