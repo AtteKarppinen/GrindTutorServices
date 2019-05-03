@@ -5,7 +5,7 @@
 	<body>
 		
 		<div class= "aboutHeader">
-				<h3> What we do for you here at Find a Grind!!</h3>
+				<h3> What we do for you here at Find a Grind</h3>
 		</div>
 		
 			<div class="aboutText">
