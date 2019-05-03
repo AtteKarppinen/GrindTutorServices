@@ -21,14 +21,7 @@ $tutors = new Tutor($db);
 // php://input includes body data sent using POST
 // file_get_contents reads parameter into one string
 // json_decode converts json string to php variable
-// if($data = json_decode(file_get_contents("php://input"))){
-
-// }
-// else{
-
-// }
-
-$data = json_decode($JSON);
+$data = json_decode(file_get_contents("php://input"));
 
 //Retrieve the data from front-end 
 //Checks if the front-end actually had input
