@@ -209,6 +209,46 @@
                 return false;
             }
         }
+        // Update student record(restPassword)
+        function resetPassword() {
+            
+            // Validate user input
+            $this->s_bdate       = testInput($this->s_bdate);
+            $this->s_email       = testInput($this->s_email);
+            // Fetch data from db with given s_bdate and s_email
+            $result = $this->conn->query("SELECT * FROM $this->tableName WHERE s_bdate = '$this->s_bdate' AND s_email = '$this->s_email'");            
+            // Check that student exists in database
+            if ($result->rowCount() === 1) {
+                // Update query 
+                $query = "UPDATE $this->tableName 
+                            SET s_password = :hashedPassword
+                            WHERE s_email = :email
+                            AND s_bdate= :birthday;";
+
+                // Prepare update statement
+                $update = $this->conn->prepare($query);
+
+                $update->bindParam(":birthday",  $this->s_bdate);
+                $update->bindParam(":email",     $this->s_email);
+
+                // Hash password before storing it
+                $this->s_password = password_hash("FindGrindTutor", PASSWORD_DEFAULT);
+                $update->bindParam(":hashedPassword", $this->s_password);
+
+                // Update student
+                try {
+                    $update->execute();
+                    return true;
+                }
+                catch(PDOException $e) {
+                    echo $e;
+                    return false;
+                }
+            }
+            else {
+                return false;
+            }
+        }
 
         // Delete student record
         function delete() {

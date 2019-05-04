@@ -251,6 +251,48 @@
             }
         }
 
+         // Update tutor record(restPassword)
+         function resetPassword() {
+            
+            // Validate user input
+            $this->t_bdate       = testInput($this->t_bdate);
+            $this->t_email       = testInput($this->t_email);
+            
+            // Fetch data from db with given t_bdate and t_email
+            $result = $this->conn->query("SELECT * FROM $this->tableName WHERE t_bdate = '$this->t_bdate' AND t_email = '$this->t_email'");
+            // Check that tutor exists in database
+            if ($result->rowCount() === 1) {
+                // Update query 
+                $query = "UPDATE $this->tableName 
+                            SET t_password = :hashedPassword
+                            WHERE t_email = :email
+                            AND t_bdate= :birthday;";
+
+                // Prepare update statement
+                $update = $this->conn->prepare($query);
+
+                $update->bindParam(":birthday",  $this->t_bdate);
+                $update->bindParam(":email",     $this->t_email);
+
+                // Hash password before storing it
+                $this->t_password = password_hash("FindGrindTutor", PASSWORD_DEFAULT);
+                $update->bindParam(":hashedPassword", $this->t_password);
+
+                // Update tutor
+                try {
+                    $update->execute();
+                    return true;
+                }
+                catch(PDOException $e) {
+                    echo $e;
+                    return false;
+                }
+            }
+            else {
+                return false;
+            }
+        }
+
         // Delete tutor record
         function delete() {
 
