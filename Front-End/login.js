@@ -54,8 +54,8 @@ $(function() {
     $("#tutorReset").submit(function(button){
 		button.preventDefault();
 		
-		const email   	= $("#Email").val();
-		const birthday 	= $("#birthDate").val();
+		const email   	= $("#tutorResetEmail").val();
+		const birthday 	= $("#tutorResetBirthday").val();
 		
 		const tutorResetData = {
 			birthday: 	birthday,
@@ -122,8 +122,8 @@ $(function() {
     $("#studentReset").submit(function(button){
 		button.preventDefault();
 		
-		const email   	= $("#Email").val();
-		const birthday 	= $("#birthDate").val();
+		const email   	= $("#studentResetEmail").val();
+		const birthday 	= $("#studentResetBirthday").val();
 		
 		const tutorResetData = {
 			birthday: 	birthday,

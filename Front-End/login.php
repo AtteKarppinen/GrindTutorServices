@@ -33,13 +33,13 @@
                                     <form id="tutorReset" class="modal-content animate">
                                         <h1>Forgot Password?</h1>
                                         <label for="fname">E-mail</label>
-                                        <input type="text" placeholder="Enter your Email" id="Email" required>
+                                        <input type="text" placeholder="Enter your Email" id="tutorResetEmail" required>
                                         
                                         <label for="lname">Date of Birth</label>
                                         <br>
-                                        <input type="date" placeholder="Enter your Date of Birth" id="birthDate" min="1901-01-01" max="2020-12-31" required>
+                                        <input type="date" placeholder="Enter your Date of Birth" id="tutorResetBirthday" min="1901-01-01" max="2020-12-31" required>
                                         <script>
-                                            document.getElementById('birthDate').value = new Date().toISOString().substring(0,10);
+                                            document.getElementById('tutorResetBirthday').value = new Date().toISOString().substring(0,10);
                                         </script>
                                         <button type="submit">Reset</button>
                                     </form>
@@ -82,13 +82,13 @@
                                     <form id="studentReset" class="modal-content animate">
                                         <h1>Forgot Password?</h1>
                                         <label for="fname">E-mail</label>
-                                        <input type="text" placeholder="Enter your Email" id="Email" required>
+                                        <input type="text" placeholder="Enter your Email" id="studentResetEmail" required>
                                         
                                         <label for="lname">Date of Birth</label>
                                         <br>
-                                        <input type="date" placeholder="Enter your Date of Birth" id="birthDate" min="1901-01-01" max="2020-12-31" required>
+                                        <input type="date" placeholder="Enter your Date of Birth" id="studentResetBirthday" min="1901-01-01" max="2020-12-31" required>
                                         <script>
-                                            document.getElementById('birthDate').value = new Date().toISOString().substring(0,10);
+                                            document.getElementById('studentResetBirthday').value = new Date().toISOString().substring(0,10);
                                         </script>
                                         <button type="submit">Reset</button>
                                     </form>
