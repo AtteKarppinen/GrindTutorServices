@@ -2,7 +2,7 @@
 	session_start();
 	include("navigationbar.php");
 ?>
-
+<html>
 	<body>
 		<div class="container">
 			<div class="topReg">
@@ -42,12 +42,21 @@
 								
 								<label for="confirmpassword">Confirm Password</label>
 								<input type="password" placeholder="Re-Enter Password" id="tutorConfirmpassword" required>
-
+                                
+                                <label for="gender">Select your gender:</label>
+                                <input type="radio" name="gender" value="M" id="tutorGender" required>Male
+                                <input type="radio" name="gender" value="F" >Female
+                                <br><br>
+                                
+                                <label for="birthday">Date of birth</label>
+                                <input type="date" id="tutorBirthday" required>
+                                <br><br>
+                                
 								<label for="address">Address</label>
 								<input type="text"  placeholder="Enter Your Address" id="tutorAddress" required>
 								
 								<label for="location">Location</label>
-								<select id="tutorLocation">
+								<select required id="tutorLocation">
 									<option value="default">Choose your Location</option>
 									<option value="Dublin 1">Dublin 1</option>
 									<option value="Dublin 2">Dublin 2</option>
@@ -79,52 +88,70 @@
 
 								<br><br>
 								<label for="fee">Your desired hourly rate of pay:</label><br><br>
-								<input type="number" id="tutorFee" min="0" max="999"> €
+								<input required type="number" id="tutorFee" min="0" max="999"> 
 								
 								<br><br>
-								<label for="subjects">Select the subjects you will teach:</label><br><br>
-								<input type="checkbox" name="sub1" value="7">Accounting
-								<input type="checkbox" name="sub2" value="9">Ancient Greek Junior Level
-								<input type="checkbox" name="sub3" value="30">Ancient Greek Senior Level
-								<input type="checkbox" name="sub4" value="17">Applied Mathematics
-								<!-- Fuck it. No time and no sense trying to make them all work -->
-								<!-- <input type="checkbox" name="sub5" value="Chemistry">Applied Technology
-								<input type="checkbox" name="sub6" value="Classical Studies">Art Junior Level
-								<input type="checkbox" name="sub7" value="Classical Studies">Art Senior Level
-								<input type="checkbox" name="sub8" value="Economics">Biology
-								<input type="checkbox" name="sub9" value="English">Business Studies Junior Level
-								<input type="checkbox" name="sub10" value="French">Business Studies Senior Level
-								<input type="checkbox" name="sub11" value="Gaeilge">Chemistry
-								<input type="checkbox" name="sub12" value="Geography">Classical Studies
-								<input type="checkbox" name="sub13" value="German">English Junior Level
-								<input type="checkbox" name="sub14" value="History">English Senior Level
-								<input type="checkbox" name="sub15" value="Home Economics">French
-								<input type="checkbox" name="sub15" value="Maths">Gaeilge Junior Level
-								<input type="checkbox" name="sub16" value="Music">Gaeilge Senior Level
-								<input type="checkbox" name="sub17" value="Physics">Geography
-								<input type="checkbox" name="sub18" value="Religion">German
-								<input type="checkbox" name="sub19" value="Science">History Junior Level
-								<input type="checkbox" name="sub20" value="Spanish">History Senior Level
-								<input type="checkbox" name="sub21" value="Accounting">Accounting
-								<input type="checkbox" name="sub22" value="Art">Art
-								<input type="checkbox" name="sub23" value="Biology">Biology
-								<input type="checkbox" name="sub24" value="Business Studies">Business Studies
-								<input type="checkbox" name="sub25" value="Chemistry">Chemistry
-								<input type="checkbox" name="sub26" value="Classical Studies">Classical Studies
-								<input type="checkbox" name="sub27" value="Economics">Economics
-								<input type="checkbox" name="sub28" value="English">English
-								<input type="checkbox" name="sub29" value="French">French
-								<input type="checkbox" name="sub30" value="Gaeilge">Gaeilge
-								<input type="checkbox" name="sub31" value="Geography">Geography
-								<input type="checkbox" name="sub32" value="German">German
-								<input type="checkbox" name="sub33" value="History">History
-								<input type="checkbox" name="sub34" value="Home Economics">Home Economics
-								<input type="checkbox" name="sub35" value="Maths">Maths
-								<input type="checkbox" name="sub36" value="Music">Music -->
-								
-								<br><br>
+								<label for="subjects">Select the subject you will teach:</label><br><br>
+                                <select required id="tutorSubject">
+                                    <option value="default">Enter your subject</option>
+                                    <option value="1">Senior Cycle - Accounting </option>
+                                    <option value="2">Senior Cycle - Agricultural Economics</option>
+                                    <option value="3">Senior Cycle - Agricultural Science  </option>
+                                    <option value="4">Senior Cycle - Ancient Greek  </option>
+                                    <option value="5">Senior Cycle - Applied Mathematics  </option>
+                                    <option value="6">Senior Cycle - Arabic  </option>
+                                    <option value="7">Senior Cycle - Art (including crafts)  </option>
+                                    <option value="8">Senior Cycle - Biology   </option>
+                                    <option value="9">Senior Cycle - Business  </option>
+                                    <option value="10">Senior Cycle - Chemistry   </option>
+                                    <option value="11">Senior Cycle - Classical Studies  </option>
+                                    <option value="12">Senior Cycle - Construction Studies  </option>
+                                    <option value="13">Senior Cycle - Design and Communication Graphics  </option>
+                                    <option value="14">Senior Cycle - Economics  </option>
+                                    <option value="15">Senior Cycle - Engineering  </option>
+                                    <option value="16">Senior Cycle - English  </option>
+                                    <option value="17">Senior Cycle - French  </option>
+                                    <option value="18">Senior Cycle - Geography  </option>
+                                    <option value="19">Senior Cycle - German  </option>
+                                    <option value="21">Senior Cycle - History  </option>
+                                    <option value="22">Senior Cycle - Home Economics  </option>
+                                    <option value="23">Senior Cycle - Irish  </option>
+                                    <option value="24">Senior Cycle - Italian  </option>
+                                    <option value="25">Senior Cycle - Japanese  </option>
+                                    <option value="26">Senior Cycle - Latin  </option>
+                                    <option value="27">Senior Cycle - Mathematics  </option>
+                                    <option value="28">Senior Cycle - Music  </option>
+                                    <option value="29">Senior Cycle - Physics  </option>
+                                    <option value="30">Senior Cycle - Physics and Chemistry  </option>
+                                    <option value="31">Senior Cycle - Russian  </option>
+                                    <option value="32">Senior Cycle - Spanish  </option>
+                                    <option value="33">Senior Cycle - Technology  </option>
+                                    <option value="34">Junior Cycle - Ancient Greek</option>
+                                    <option value="35">Junior Cycle - Art, Craft and Design</option>
+                                    <option value="36">Junior Cycle - Business Studies</option>
+                                    <option value="37">Junior Cycle - Classical Studies</option>
+                                    <option value="38">Junior Cycle - English</option>
+                                    <option value="39">Junior Cycle - Environmental and Social Studies</option>
+                                    <option value="40">Junior Cycle - French</option>
+                                    <option value="41">Junior Cycle - Geography</option>
+                                    <option value="42">Junior Cycle - German</option>
+                                    <option value="43">Junior Cycle - History</option>
+                                    <option value="44">Junior Cycle - Home Economics</option>
+                                    <option value="45">Junior Cycle - Irish</option>
+                                    <option value="46">Junior Cycle - Italian</option>
+                                    <option value="47">Junior Cycle - Jewish Studies</option>
+                                    <option value="48">Junior Cycle - Latin</option>
+                                    <option value="49">Junior Cycle - Materials Technology (Wood)</option>
+                                    <option value="50">Junior Cycle - Mathematics</option>
+                                    <option value="51">Junior Cycle - Metalwork</option>
+                                    <option value="52">Junior Cycle - Music</option>
+                                    <option value="53">Junior Cycle - Science</option>
+                                    <option value="54">Junior Cycle - Spanish</option>
+                                    <option value="55">Junior Cycle - Technical Graphics</option>
+                                    <option value="56">Junior Cycle - Technology</option>
+                                    </select>
+                                
 								<button type="submit">Register</button>
-							
 							</div>
 						</form>
 					</div>	
@@ -156,6 +183,16 @@
 								
 								<label for="confirmpassword">Confirm Password</label>
 								<input type="password" placeholder="Re-Enter Password" id="confirmpassword" required>
+                                
+                                <label for="birthday">Date of birth</label>
+                                <input type="date" id="birthday" required>
+                                <br><br>
+                                
+                                <label for="gender">Select your gender:</label>
+                                <input type="radio" name="gender" value="M" id="gender" required>Male
+                                <input type="radio" name="gender" value="F" >Female
+                                <br><br>
+                                
                 
 								<button type="submit">Register</button>
 							</div>
