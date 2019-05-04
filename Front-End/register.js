@@ -30,20 +30,19 @@ $(function() {
 		}
 	});
 	// Prevent numbers over 999 (largest fee allowed in db)
-	number.keyup(function() {
+	number.keyup( function() {
 		if (number.val() > 999) {
 			number.val(999);
 		}
 	});
 
-	$("#studentSubmit").submit(function(button){
+	$("#studentSubmit").submit(function (button) {
 		button.preventDefault();
 		
 		const firstName	= $("#firstName").val();
 		const lastName 	= $("#lastName").val();
-		// TODO: add sex and birthday into forms
-		const birthday 	= "2000-01-01";
-		const sex 		= "M";
+		const birthday 	= $("#birthday").val();
+		const sex 		= $("#gender").val();
 		const email 	= $("#email").val();
 		const password 	= $("#password").val();
 		
@@ -82,16 +81,15 @@ $(function() {
 		
 		const firstName	= $("#tutorFName").val();
 		const lastName 	= $("#tutorLName").val();
-		// TODO: add sex and birthday into forms
-		const birthday 	= "2000-01-01";
-		const sex 		= "M";
+		const birthday 	= $("#tutorBirthday").val();
+		const sex 		= $("#tutorGender").val();
 		const email 	= $("#tutorEmail").val();
 		const password 	= $("#tutorPassword").val();
 		const address 	= $("#tutorAddress").val();
 		const location 	= $("#tutorLocation").val();
 		const fee 		= parseInt($("#tutorFee").val());
 		// For now, select only the first selection for taught subjects
-		const subjects 	= parseInt($("input:checkbox:checked")[0].value);
+		const subjects 	= parseInt($("#tutorSubject").val());
 		// Enable if there is time to implement this
 		// const vettingDocument = $("#vettingDocument").val();
 		
