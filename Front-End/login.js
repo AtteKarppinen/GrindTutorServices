@@ -81,9 +81,7 @@ $(function() {
 		})
 		.fail(function(error) {
             console.log(error.responseJSON, error.status);
-            alert("hello");
-            alert(error.responseJSON.Message);
-            // alert("Invalid Email Or BirthDate");
+            alert("Invalid Email Or BirthDate");
 		});
     });
     
