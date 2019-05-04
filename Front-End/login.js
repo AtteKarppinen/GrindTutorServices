@@ -90,8 +90,8 @@ $(function() {
 	$("#studentLog").submit(function(button) {
 		button.preventDefault();
 		
-		const email = $("#email").val();
-		const psw = $("#password").val(); 
+		const email = $("#studentEmail").val();
+		const psw = $("#studentPassword").val(); 
 		
 		const obj = { 
 			email: email, 

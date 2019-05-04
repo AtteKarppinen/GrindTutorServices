@@ -61,10 +61,10 @@
 					<div class="content">
                         <form id="studentLog">
                             <label for="email">Email</label>
-                            <input type="email" placeholder="Enter your Email" id="tutorEmail" required>
+                            <input type="email" placeholder="Enter your Email" id="studentEmail" required>
 
                             <label for="password"><b>Password</b></label>
-                            <input type="password" placeholder="Enter Password" id="tutorPassword" required>
+                            <input type="password" placeholder="Enter Password" id="studentPassword" required>
                             <label id="remember">
                                 <input type="checkbox" name="remember"> Remember me
                             </label>
