@@ -82,32 +82,47 @@
      
 		<div class="container">
             <?php
+                echo "<div>";
+                echo "<div class='tutorInfo'>".
+                "<table class='tutorTable'>
+                <thead>
+                <tr>
+                    <th>Image</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Birthday</th>
+                    <th>Sex</th>
+                    <th>Address</th>
+                    <th>Location</th>
+                    <th>Fee</th>
+                    <th>Subject Name</th>
+                    <th>Subject Level</th>
+                    <th></th>
+                </tr>
+                </thead><tbody>";
                 foreach ($tutorsArray['Tutors'] as $elem) {
-                    echo "<div>";
-                    echo "<div class='tutorInfo'>".
-                        "<table class='tInfo' >
-                        <tbody>
-                        <tr align='center'>
-                            <td rowspan='2'>";
+                    echo
+                    "<tr class='tInfo' align='center'>
+                        <td>";
                             if($elem[Sex] === 'M'){
-                                echo "<img id='searchImage'src='Images/boy.png' alt='Maale Tutor'></td>";
+                                echo "<img id='searchImage'src='Images/boy.png' alt='Male Tutor'></td>";
                             } 
                             elseif($elem[Sex] === 'F'){
-                                echo "<img id='searchImage'src='Images/girl.png' alt='Maale Tutor'></td>";
+                                echo "<img id='searchImage'src='Images/girl.png' alt='Female Tutor'></td>";
                             }
                             echo
-                            "<td>First Name</td>
-                            <td>Last Name</td>
-                            <td>Birthday</td>
-                            <td>Sex</td>
-                            <td>Address</td>
-                            <td>Location</td>
-                            <td>Fee</td>
-                            <td>Subject Name</td>
-                            <td>Subject Level</td>
-                            <td rowspan='2'>".
-                            "<div>
-                                <button onclick=\"document.getElementById('id03').style.display='block'\">Contact</button>
+                            "<td>".$elem['First Name']."</td>
+                            <td>".$elem['Last Name']."</td>
+                            <td>".$elem['Birthday']."</td>
+                            <td>".$elem['Sex']."</td>
+                            <td>".$elem['Address']."</td>
+                            <td>".$elem['Location']."</td>
+                            <td>".$elem['Fee']."</td>
+                            <td>".$elem['Subject Name']."</td>
+                            <td>".$elem['Subject Level']."</td>
+                            <td class='contacttd'>".
+                            "<div style='height:100%'>
+                                <button class='contactbutton' onclick=\"document.getElementById('id03').style.display='block'\">Contact</button>
                                 <div id='id03' class='modal'>
                                     <form id='PaymentSubmit' class='modal-content animate'>
                                         <div class='imgcontainer'>
@@ -123,27 +138,13 @@
                                 </div>
                             </div>".                          
                             "</td>
-                        </tr>
-                        ". 
-                            "<tr align='center'><td>";                        
-                        echo         
-                            $elem['First Name']."</td><td>".
-                            $elem['Last Name']."</td><td>".
-                            $elem['Birthday']."</td><td>".
-                            $elem['Sex']."</td><td>".
-                            $elem['Address']."</td><td>".
-                            $elem['Location']."</td><td>".
-                            $elem['Fee']."</td><td>".
-                            $elem['Subject Name']."</td><td>".
-                            $elem['Subject Level']."</td>".
-                            
-                            "</tr>".
-                            
-                        "</tbody>
-                        </table>
-                        </div>";
-                    echo "</div>";
+                        </tr>";
                 }
+                echo "</tbody>
+                    </table>
+                    </div>";
+                echo "</div>";
+                
             ?>
 		</div>      
 	</body>
