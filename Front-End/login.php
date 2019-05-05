@@ -1,5 +1,9 @@
 <?php
-	include("navigationbar.php");
+    include("navigationbar.php");
+    if (isset($_SESSION["loggedIn"]) && $_SESSION["loggedIn"] === true) {
+        header('Location: http://134.209.83.193/GrindTutorServices/Front-End/index.php');
+        die();
+    }   
 ?>
 
 	<body>
