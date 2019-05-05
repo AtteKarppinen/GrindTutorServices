@@ -224,9 +224,6 @@ body {
 	font-size: 2vw;
 }
 
-.descImg { 
-	text-align: center;
-}
 
 .aboutHeader {
 	text-align: center;
@@ -240,9 +237,10 @@ body {
 	text-align: center;
 }
 
-#roundedImage2 {
-	border-radius: 10%;	
+.aboutImg{
+	border-radius: 8px;	
 }
+
 
 /*-----------------Search Form on Home Page-----------------*/
 
@@ -433,6 +431,12 @@ span.reg {
 	color: red;
 	cursor: pointer;
 }
+
+.link{
+	font-size: 2vw;
+	font-weight: bold;
+}
+	
 
 /*------------Profile Page-----------------*/
 
