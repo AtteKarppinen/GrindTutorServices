@@ -151,13 +151,46 @@ body {
 	border-radius: 5px;
 	border-style: solid;
 	border-width: 1px;
-	border-color: lightgreen
+	border-color: lightgreen;
 }
 
 #roundedImage {
 	border-radius: 50%;
 }
+/*----------------------SearchTutor------------*/
+#searchImage {
+    width: auto;
+    height: auto;
+    max-width: 100px;
+    max-height: 100px;
+	border-radius: 50%;
+}
+.tutorInfo{
+    width: 100%;    
+}
+.tutorTable {
+		width: 100%;
+		border-collapse: collapse;    
+}
+.tInfo{
+	background: rgb(234, 244, 246);
+}
 
+.contacttd{
+	background: lightgreen;
+}
+
+.contactbutton {
+	background-color: #4CAF50;
+	color: white;
+	padding: 14px 20px;
+	margin: 8px 0;
+	border: none;
+	cursor: pointer;
+    width: 100px;
+    height: 100px;
+	border-radius: 5px;
+}
 /*----------------------Slideshow------------*/
 
 .mySlides {
@@ -303,7 +336,7 @@ input[type=text], input[type=password], input[type=email], input[type=date]{
 	border-radius: 5px;
 }
 
-button {
+button{
 	background-color: #4CAF50;
 	color: white;
 	padding: 14px 20px;

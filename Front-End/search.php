@@ -82,37 +82,69 @@
      
 		<div class="container">
             <?php
+                echo "<div>";
+                echo "<div class='tutorInfo'>".
+                "<table class='tutorTable'>
+                <thead>
+                <tr>
+                    <th>Image</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Birthday</th>
+                    <th>Sex</th>
+                    <th>Address</th>
+                    <th>Location</th>
+                    <th>Fee</th>
+                    <th>Subject Name</th>
+                    <th>Subject Level</th>
+                    <th></th>
+                </tr>
+                </thead><tbody>";
                 foreach ($tutorsArray['Tutors'] as $elem) {
-                    echo "<div>";
-                    echo "<div class='tutorInfo'>".
-                        $elem['First Name'].
-                        $elem['Last Name'].
-                        $elem['Birthday'].
-                        $elem['Sex'].
-                        $elem['Address'].
-                        $elem['Location'].
-                        $elem['Fee'].
-                        $elem['Subject Name'].
-                        $elem['Subject Level']."</div>";
-                    echo "<div>
-                        <button onclick=\"document.getElementById('id03').style.display='block'\">Contact</button>
-				
-					    <div id='id03' class='modal'>
-						<form id='PaymentSubmit' class='modal-content animate'>
-							<div class='imgcontainer'>
-							<span onclick=\"document.getElementById('id03').style.display='none'\" class='close' title='Close Modal'>&times;</span>
-							</div>
-							<div class='regcontainer'>
-                                <h1>Contract</h1>
-                                <label for='CardNum'>Card Number</label>
-                                <input type='text' placeholder='Enter your Card Number' id='PayCardNumber' required>
-                                <button type='submit'>Contact</button>
-							</div>
-						</form>
-					</div>
-                        </div>";
-                    echo "</div>";
+                    echo
+                    "<tr class='tInfo' align='center'>
+                        <td>";
+                            if($elem[Sex] === 'M'){
+                                echo "<img id='searchImage'src='Images/boy.png' alt='Male Tutor'></td>";
+                            } 
+                            elseif($elem[Sex] === 'F'){
+                                echo "<img id='searchImage'src='Images/girl.png' alt='Female Tutor'></td>";
+                            }
+                            echo
+                            "<td>".$elem['First Name']."</td>
+                            <td>".$elem['Last Name']."</td>
+                            <td>".$elem['Birthday']."</td>
+                            <td>".$elem['Sex']."</td>
+                            <td>".$elem['Address']."</td>
+                            <td>".$elem['Location']."</td>
+                            <td>".$elem['Fee']."</td>
+                            <td>".$elem['Subject Name']."</td>
+                            <td>".$elem['Subject Level']."</td>
+                            <td class='contacttd'>".
+                            "<div style='height:100%'>
+                                <button class='contactbutton' onclick=\"document.getElementById('id03').style.display='block'\">Contact</button>
+                                <div id='id03' class='modal'>
+                                    <form id='PaymentSubmit' class='modal-content animate'>
+                                        <div class='imgcontainer'>
+                                        <span onclick=\"document.getElementById('id03').style.display='none'\" class='close' title='Close Modal'>&times;</span>
+                                        </div>
+                                        <div class='regcontainer'>
+                                            <h1>Contract</h1>
+                                            <label for='CardNum'>Card Number</label>
+                                            <input type='text' placeholder='Enter your Card Number' id='PayCardNumber' required>
+                                            <button type='submit'>Contact</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>".                          
+                            "</td>
+                        </tr>";
                 }
+                echo "</tbody>
+                    </table>
+                    </div>";
+                echo "</div>";
+                
             ?>
 		</div>      
 	</body>
