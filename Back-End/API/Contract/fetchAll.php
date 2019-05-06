@@ -44,10 +44,10 @@
     
             // "Description for data" => Contract property (fields from db)
             $contractItem=array(
-                "Contract number" => $contract_num,
-                "Contract student number" => $contract_student_num,
-                "Contract tutor number" => $contract_tutor_num,
-                "Contract subject number" => $contract_subject_num
+                "Contract_number" => $contract_num,
+                "Contract_student_number" => $contract_student_num,
+                "Contract_tutor_number" => $contract_tutor_num,
+                "Contract_subject_number" => $contract_subject_num
             );
             array_push($contractsArray["Contracts"], $contractItem);
         }

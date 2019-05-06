@@ -51,6 +51,7 @@
 
             // Session variable
             $_SESSION["loggedIn"] = true;
+            $_SESSION["who"] = 'tutor';
 
             // HTTP status code - 200 OK
             http_response_code(200);
