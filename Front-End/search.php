@@ -97,6 +97,7 @@
                     <th>Subject Level</th>
                     <th></th>
                 </tr>
+                
                 </thead><tbody>"; 
                 foreach ($tutorsArray['Tutors'] as $elem) {
                     echo
