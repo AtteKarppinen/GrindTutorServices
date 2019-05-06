@@ -8,7 +8,14 @@
 			<div class="topReg">
 				<h3>Register with Find a Grind today!</h3>
 				<p>
-					Join us now to find a tutor to suit you. Here at Find a Grind our tutors provide a fantastic one on one service so you feel confident going into any exam! 
+					Join us now to find a tutor to suit you. Here at Find a Grind our tutors provide a fantastic one on one service so you feel confident going into any exam!
+					<br>
+					<br>
+					If you are registering with us here at Find A Grind to become a Tutor you must first complete The National Garda Vetting Application as you may be working
+					with children. Once you have completed the application you can upload your Garda Vetting Document as a PDF while filling out the tutor register form. 
+					<br>
+					<br>
+					To complete the Garda Vetting Application you can follow the link <a href="https://vetting.garda.ie/"> HERE! </a>
 				</p>
 			</div>
 		</div>
