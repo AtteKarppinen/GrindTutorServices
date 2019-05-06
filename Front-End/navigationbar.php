@@ -13,7 +13,8 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<script type="text/javascript" src="register.js"></script>
 		<script type="text/javascript" src="login.js"></script>
-		
+        <script type="text/javascript" src="search.js"></script>
+        
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		
 		<div id="navbar">
