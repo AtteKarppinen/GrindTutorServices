@@ -467,6 +467,11 @@ span.reg {
 	cursor: pointer;
 }
 
+a:link{
+	font-size: 2vw;
+	font-weight: bold;
+}
+
 /*------------Profile Page-----------------*/
 
 .fakeimg {
