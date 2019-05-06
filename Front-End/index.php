@@ -8,7 +8,7 @@
             $("#level").change(function() {
                 var val = $(this).val();
                 if (val == "Senior Cycle") {
-                    $("#choose").html("<option value='default'>Choose a Senior Cycle option</option>"+
+                    $("#choose").html("<option class='placeholder' value='' selected disabled hidden>Choose a Senior Cycle option</option>"+
                                     "<option value='Accounting'>Senior Cycle - Accounting </option>"+
                                     "<option value='Agricultural Economics'>Senior Cycle - Agricultural Economics</option>"+
                                     "<option value='Agricultural Science'>Senior Cycle - Agricultural Science  </option>"+
@@ -39,7 +39,7 @@
                                     "<option value='Physics'>Senior Cycle - Physics  </option>"+
                                     "<option value='Physics and Chemistry'>Senior Cycle - Physics and Chemistry  </option>");
                 } else if (val == "Junior Cycle") {
-                    $("#choose").html("<option value='default'>Choose a Junior Cycle option</option>"+
+                    $("#choose").html("<option class='placeholder' value='' selected disabled hidden>Choose a Junior Cycle option</option>"+
                                     "<option value='Ancient Greek'>Junior Cycle - Ancient Greek</option>"+
                                     "<option value='Art, Craft and Design'>Junior Cycle - Art, Craft and Design</option>"+
                                     "<option value='Business Studies'>Junior Cycle - Business Studies</option>"+
@@ -108,18 +108,18 @@
 				
 				<div class="rightSideMiddle">
 					<form action="search.php" method ="get">
-						<select name="cycle" id="level">
-							<option value="default">Choose a Cycle</option>
+						<select required name="cycle" id="level">
+							<option class="placeholder" value="" selected disabled hidden>Choose a Cycle</option>
 							<option value="Junior Cycle">Junior Cycle</option>
 							<option value="Senior Cycle">Senior Cycle</option>
 						</select>
 						<br>
-						<select name="subject" id="choose">
-							<option value="default">Choose a Cycle first</option>
+						<select required name="subject" id="choose">
+							<option class="placeholder" value="" selected disabled hidden >Choose a Cycle first</option>
 						</select>
 						<br>
-						<select name="location">
-							<option value="default">Choose your Location</option>
+						<select required name="location">
+							<option class="placeholder" value="" selected disabled hidden>Choose your Location</option>
 							<option value="Dublin 1">Dublin 1</option>
 							<option value="Dublin 2">Dublin 2</option>
 							<option value="Dublin 3">Dublin 3</option>
