@@ -2,7 +2,71 @@
 	include("navigationbar.php");
 ?>
 <html>
-    
+    <script>
+        
+        $(document).ready(function() {
+            $("#level").change(function() {
+                var val = $(this).val();
+                if (val == "Senior Cycle") {
+                    $("#choose").html("<option value='default'>Choose a Senior Cycle option</option>"+
+                                    "<option value='Accounting'>Senior Cycle - Accounting </option>"+
+                                    "<option value='Agricultural Economics'>Senior Cycle - Agricultural Economics</option>"+
+                                    "<option value='Agricultural Science'>Senior Cycle - Agricultural Science  </option>"+
+                                    "<option value='Ancient Greek'>Senior Cycle - Ancient Greek  </option>"+
+                                    "<option value='Applied Mathematics'>Senior Cycle - Applied Mathematics  </option>"+
+                                    "<option value='Arabic'>Senior Cycle - Arabic  </option>"+
+                                    "<option value='Art (including crafts)'>Senior Cycle - Art (including crafts)  </option>"+
+                                    "<option value='Biology'>Senior Cycle - Biology   </option>"+
+                                    "<option value='Business'>Senior Cycle - Business  </option>"+
+                                    "<option value='Chemistry'>Senior Cycle - Chemistry   </option>"+
+                                    "<option value='Classical Studies'>Senior Cycle - Classical Studies  </option>"+
+                                    "<option value='Construction Studies'>Senior Cycle - Construction Studies  </option>"+
+                                    "<option value='Design and Communication Graphics'>Senior Cycle - Design and Communication Graphics  </option>"+
+                                    "<option value='Economics'>Senior Cycle - Economics  </option>"+
+                                    "<option value='Engineering'>Senior Cycle - Engineering  </option>"+
+                                    "<option value='English'>Senior Cycle - English  </option>"+
+                                    "<option value='French'>Senior Cycle - French  </option>"+
+                                    "<option value='Geography'>Senior Cycle - Geography  </option>"+
+                                    "<option value='German'>Senior Cycle - German  </option>"+
+                                    "<option value='History'>Senior Cycle - History  </option>"+
+                                    "<option value='Home Economics'>Senior Cycle - Home Economics  </option>"+
+                                    "<option value='Irish'>Senior Cycle - Irish  </option>"+
+                                    "<option value='Italian'>Senior Cycle - Italian  </option>"+
+                                    "<option value='Japanese'>Senior Cycle - Japanese  </option>"+
+                                    "<option value='Latin'>Senior Cycle - Latin  </option>"+
+                                    "<option value='Mathematics'>Senior Cycle - Mathematics  </option>"+
+                                    "<option value='Music'>Senior Cycle - Music  </option>"+
+                                    "<option value='Physics'>Senior Cycle - Physics  </option>"+
+                                    "<option value='Physics and Chemistry'>Senior Cycle - Physics and Chemistry  </option>");
+                } else if (val == "Junior Cycle") {
+                    $("#choose").html("<option value='default'>Choose a Junior Cycle option</option>"+
+                                    "<option value='Ancient Greek'>Junior Cycle - Ancient Greek</option>"+
+                                    "<option value='Art, Craft and Design'>Junior Cycle - Art, Craft and Design</option>"+
+                                    "<option value='Business Studies'>Junior Cycle - Business Studies</option>"+
+                                    "<option value='Classical Studies'>Junior Cycle - Classical Studies</option>"+
+                                    "<option value='English'>Junior Cycle - English</option>"+
+                                    "<option value='Environmental and Social Studies'>Junior Cycle - Environmental and Social Studies</option>"+
+                                    "<option value='French'>Junior Cycle - French</option>"+
+                                    "<option value='Geography'>Junior Cycle - Geography</option>"+
+                                    "<option value='German'>Junior Cycle - German</option>"+
+                                    "<option value='History'>Junior Cycle - History</option>"+
+                                    "<option value='Home Economics'>Junior Cycle - Home Economics</option>"+
+                                    "<option value='Irish'>Junior Cycle - Irish</option>"+
+                                    "<option value='Italian'>Junior Cycle - Italian</option>"+
+                                    "<option value='Jewish Studies'>Junior Cycle - Jewish Studies</option>"+
+                                    "<option value='Latin'>Junior Cycle - Latin</option>"+
+                                    "<option value='Materials Technology (Wood)'>Junior Cycle - Materials Technology (Wood)</option>"+
+                                    "<option value='Mathematics'>Junior Cycle - Mathematics</option>"+
+                                    "<option value='Metalwork'>Junior Cycle - Metalwork</option>"+
+                                    "<option value='Music'>Junior Cycle - Music</option>"+
+                                    "<option value='Science'>Junior Cycle - Science</option>"+
+                                    "<option value='Spanish'>Junior Cycle - Spanish</option>"+
+                                    "<option value='Technical Graphics'>Junior Cycle - Technical Graphics</option>"+
+                                    "<option value='Technology'>Junior Cycle - Technology</option>");
+                }
+    });
+});   
+    </script>
 	<body>
 		<div class="container">
 			<div class="row">
@@ -44,34 +108,14 @@
 				
 				<div class="rightSideMiddle">
 					<form action="search.php" method ="get">
-						<select name="cycle">
+						<select name="cycle" id="level">
 							<option value="default">Choose a Cycle</option>
 							<option value="Junior Cycle">Junior Cycle</option>
 							<option value="Senior Cycle">Senior Cycle</option>
 						</select>
 						<br>
-						<select name="subject">
-							<option value="default">Choose a Subject</option>
-							<option value="Accounting">Accounting</option>
-							<option value="Art">Art</option>
-							<option value="Biology">Biology</option>
-							<option value="Business Studies">Business Studies</option>
-							<option value="Chemistry">Chemistry</option>
-							<option value="Classical Studies">Classical Studies</option>
-							<option value="Economics">Economics</option>
-							<option value="English">English</option>
-							<option value="French">French</option>
-							<option value="Gaeilge">Gaeilge</option>
-							<option value="Geography">Geography</option>
-							<option value="German">German</option>
-							<option value="History">History</option>
-							<option value="Home Economics">Home Economics</option>
-							<option value="Maths">Maths</option>
-							<option value="Music">Music</option>
-							<option value="Physics">Physics</option>
-							<option value="Religious Education">Religious Education</option>
-							<option value="Science">Science</option>
-							<option value="Spanish">Spanish</option>
+						<select name="subject" id="choose">
+							<option value="default">Choose a Cycle first</option>
 						</select>
 						<br>
 						<select name="location">
