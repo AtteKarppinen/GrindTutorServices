@@ -55,7 +55,8 @@
                     "Location" => $t_location,
                     "Fee" => $t_fee,
                     "Subject Name" => $subject_name,
-                    "Subject Level" => $subject_level
+                    "Subject Level" => $subject_level,
+                    "Subject Num" => $subject_num
                     // Location is in unrecognised format, breaking this call
                     // "Location" => $Location
                     //I added subject name and level from the subject table to the array
@@ -71,15 +72,12 @@
         echo "error";
     }
 ?>
-
 	<body>
 		<div class="container">
 			<div class="topReg">
 				<h3>Search Tutor</h3>
 			</div>
 		</div>
-		
-     
 		<div class="container">
             <?php
                 echo "<div>";
@@ -99,7 +97,8 @@
                     <th>Subject Level</th>
                     <th></th>
                 </tr>
-                </thead><tbody>";
+                
+                </thead><tbody>"; 
                 foreach ($tutorsArray['Tutors'] as $elem) {
                     echo
                     "<tr class='tInfo' align='center'>
@@ -122,7 +121,20 @@
                             <td>".$elem['Subject Level']."</td>
                             <td class='contacttd'>".
                             "<div style='height:100%'>
-                                <button class='contactbutton' onclick=\"document.getElementById('id03').style.display='block'\">Contact</button>
+                                <button class='contactbutton' onclick=\"";
+                                if (isset($_SESSION["loggedIn"]) && $_SESSION["loggedIn"] === true){
+                                    if(isset($_SESSION["who"]) && $_SESSION["who"] === 'student'){
+                                       
+                                        echo "document.getElementById('id03').style.display='block'\">Contact</button>";
+                                    }
+                                    else{
+                                        echo "wrongaccount()\">Contact</button>";
+                                    }
+                                }
+                                else{
+                                    echo "location.href='login.php'\">Contact</button>";
+                                }
+                                echo "
                                 <div id='id03' class='modal'>
                                     <form id='PaymentSubmit' class='modal-content animate'>
                                         <div class='imgcontainer'>
@@ -131,8 +143,12 @@
                                         <div class='regcontainer'>
                                             <h1>Contract</h1>
                                             <label for='CardNum'>Card Number</label>
-                                            <input type='text' placeholder='Enter your Card Number' id='PayCardNumber' required>
-                                            <button type='submit'>Contact</button>
+                                            <input type='text' placeholder='Enter your Card Number' id='PayCardNumber' onkeypress='validate(event)' minlength='16' maxlength='16' required>
+                                            <input type='hidden' id='TutorNumber' value='".$elem['Tutor Number']."' required>"
+                                            ."<input type='hidden' id='StudentNumber' value='".$_SESSION["snum"]."' required>"
+                                            ."<input type='hidden' id='SubjectNumber' value='".$elem['Subject Num']."' required>"
+                                            ."<input type='hidden' id='Price' value='".$elem['Fee']."' required>"
+                                            ."<button type='submit'>Contact</button>
                                         </div>
                                     </form>
                                 </div>

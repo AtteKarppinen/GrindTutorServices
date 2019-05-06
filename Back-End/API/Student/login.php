@@ -52,7 +52,8 @@
 
             // Session variable
             $_SESSION["loggedIn"] = true;
-
+            $_SESSION["who"] = 'student';
+            $_SESSION['snum'] = $studentID;
             // HTTP status code - 200 OK
             http_response_code(200);
 
