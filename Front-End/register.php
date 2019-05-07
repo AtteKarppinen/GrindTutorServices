@@ -87,6 +87,19 @@
 									<option value="Dublin 20">Dublin 20</option>
 									<option value="Dublin 22">Dublin 22</option>
 									<option value="Dublin 24">Dublin 24</option>
+                                    <option value="Athlone">Athlone</option>
+                                    <option value="Balbriggan">Balbriggan</option>
+                                    <option value="Carlow">Carlow</option>
+                                    <option value="Cork">Cork</option>
+                                    <option value="Drogheda">Drogheda</option>
+                                    <option value="Dundalk">Dundalk</option>
+                                    <option value="Dún Laoghaire">Dún Laoghaire</option>
+                                    <option value="Galway">Galway</option>
+                                    <option value="Kilkenny">Kilkenny</option>
+                                    <option value="Limerick">Limerick</option>
+                                    <option value="Louth">Louth</option>
+                                    <option value="Portlaoise">Portlaoise</option>
+                                    <option value="Waterford">Waterford</option>
 								</select>
 								
 								<br><br>
