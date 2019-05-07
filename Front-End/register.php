@@ -56,7 +56,7 @@
                                 <br><br>
                                 
                                 <label for="birthday">Date of birth</label>
-                                <input type="date" id="tutorBirthday" required>
+                                <input  max="2018-12-31" type="date" id="tutorBirthday" required>
                                 <br><br>
                                 
 								<label for="address">Address</label>
@@ -64,7 +64,7 @@
 								
 								<label for="location">Location</label>
 								<select required id="tutorLocation">
-									<option value="default">Choose your Location</option>
+									<option option class='placeholder' value='' selected disabled hidden>Choose your Location</option>
 									<option value="Dublin 1">Dublin 1</option>
 									<option value="Dublin 2">Dublin 2</option>
 									<option value="Dublin 3">Dublin 3</option>
@@ -87,11 +87,24 @@
 									<option value="Dublin 20">Dublin 20</option>
 									<option value="Dublin 22">Dublin 22</option>
 									<option value="Dublin 24">Dublin 24</option>
+                                    <option value="Athlone">Athlone</option>
+                                    <option value="Balbriggan">Balbriggan</option>
+                                    <option value="Carlow">Carlow</option>
+                                    <option value="Cork">Cork</option>
+                                    <option value="Drogheda">Drogheda</option>
+                                    <option value="Dundalk">Dundalk</option>
+                                    <option value="Dún Laoghaire">Dún Laoghaire</option>
+                                    <option value="Galway">Galway</option>
+                                    <option value="Kilkenny">Kilkenny</option>
+                                    <option value="Limerick">Limerick</option>
+                                    <option value="Louth">Louth</option>
+                                    <option value="Portlaoise">Portlaoise</option>
+                                    <option value="Waterford">Waterford</option>
 								</select>
 								
 								<br><br>
 								<label for="file">Upload Garda Vetting Document</label><br><br>
-								<input type="file" placeholder="Upload your form as a PDF file" id="file">
+								<input required accept="application/pdf,application/vnd.ms-excel" type="file" placeholder="Upload your form as a PDF file" id="file">
 
 								<br><br>
 								<label for="fee">Your desired hourly rate of pay:</label><br><br>
@@ -100,7 +113,7 @@
 								<br><br>
 								<label for="subjects">Select the subject you will teach:</label><br><br>
                                 <select required id="tutorSubject">
-                                    <option value="default">Enter your subject</option>
+                                    <option class='placeholder' value='' selected disabled hidden>Enter your subject</option>
                                     <option value="1">Senior Cycle - Accounting </option>
                                     <option value="2">Senior Cycle - Agricultural Economics</option>
                                     <option value="3">Senior Cycle - Agricultural Science  </option>
@@ -200,8 +213,7 @@
                                 <input type="radio" name="gender" value="F" >Female
                                 <br><br>
                                 
-                
-								<button type="submit">Register</button>
+				                <button type="submit">Register</button>
 							</div>
 							
 						</form>
