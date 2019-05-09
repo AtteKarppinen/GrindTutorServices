@@ -90,7 +90,6 @@
                     <th>Last Name</th>
                     <th>Birthday</th>
                     <th>Sex</th>
-                    <th>Address</th>
                     <th>Location</th>
                     <th>Fee</th>
                     <th>Subject Name</th>
@@ -114,7 +113,6 @@
                             <td>".$elem['Last Name']."</td>
                             <td>".$elem['Birthday']."</td>
                             <td>".$elem['Sex']."</td>
-                            <td>".$elem['Address']."</td>
                             <td>".$elem['Location']."</td>
                             <td>".$elem['Fee']."</td>
                             <td>".$elem['Subject Name']."</td>
